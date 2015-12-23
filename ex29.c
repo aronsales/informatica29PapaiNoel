@@ -30,28 +30,21 @@
 
 #define WVV L'\u2502' /* ^VU2502 │ */
 
-typedef struct
-{
-    int tab[MAXTAB][MAXTAB];
-    int modo;
-    int nivel;
-}Velha;
 
 //prototipo de funcoes
 int inicializacao(void);
 int tabuleiro(void);
 int menu(void);
-int humanos;
-int humanoxpc;
-int nivelfacil(int tab[MAXTAB][MAXTAB], int vez);
-int nivelmedio(int tab[MAXTAB][MAXTAB], int vez);
-int niveldificil(int tab[MAXTAB][MAXTAB], int vez);
+int humanos(void);
+int humanoxpc(void);
+int nivelfacil(int tab[3][3], int vez); /*nivel facil*/
+int nivelmedio(int tab[3][3], int vez);/*nivel medio*/
+int niveldificil(int tab[3][3], int vez); /*nivel dificil*/
 
 int tabuleiro1,tabuleiro2,tabuleiro3,tabuleiro4,tabuleiro5,tabuleiro6,tabuleiro7,tabuleiro8,tabuleiro9;
 int jogada;
 int turnojogador;
 
-Velha velha;
 
 void inicializacao ()
 {
@@ -62,16 +55,19 @@ void inicializacao ()
 
 void menu ()
 {
-    printf("\nHa tres modalidades disponiveis: \n Pressione '1' se voce deseja um jogo com dois humanos; \n '2' se voce deseja ver uma partida simulada; \n '3' se voce deseja jogar contra a maquina!\n");
-    scanf("%d",velha.modo);
+    printf("\nHa tres modalidades disponiveis: \n");
+    printf("Pressione '1' se voce deseja um jogo para dois humanos.");
+    printf("\n'2' se voce deseja ver uma partida simulada.");
+    printf("\n'3' se voce deseja jogar contra a maquina.\n");
+    scanf("%d",//criar variavel);
     //se tiver escolhido a opcao 3
     printf("\n Voce escolheu jogar contra a maquina, por favor, informe em qual dificuldade voce deseja o desafio:");
     printf("\n '4' - Nivel facil");
     printf("\n '5' - Nivel medio");
     printf("\n '6' - Nivel dificil");
-    scanf("%d",velha.nivel);
-    printf("\nO usuario devera escolher em qual 'casa' ele jogara!");
-    printf("\n Exemplo de tabuleiro:");
+    scanf("%d",//criar variavel);
+    printf("\n\n\nO usuario devera escolher em qual 'casa' ele jogara!");
+    printf("\n Exemplo de tabuleiro:\n");
     printf("\n 1 | 2 | 3");
     printf("\n ----------");
     printf("\n 4 | 5 | 6");
