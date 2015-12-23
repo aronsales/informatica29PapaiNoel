@@ -64,6 +64,7 @@ int nivelfacil(int tab[MAXTAB][MAXTAB], int vez);
 int nivelmedio(int tab[MAXTAB][MAXTAB], int vez);
 int niveldificil(int tab[MAXTAB][MAXTAB], int vez);
 
+Velha velha;
 
 void inicializacao ()
 {
@@ -74,10 +75,21 @@ void inicializacao ()
 
 void menu ()
 {
-    printf("\nHa tres modalidades disponiveis: \n Pressione '1' se voce deseja um jogo com dois humanos; \n '2' se voce deseja ver uma partida simulada entre dois computadores; \n '3' se voce deseja jogar contra a maquina!\n");
+    printf("\nHa tres modalidades disponiveis: \n Pressione '1' se voce deseja um jogo com dois humanos; \n '2' se voce deseja ver uma partida simulada; \n '3' se voce deseja jogar contra a maquina!\n");
+    scanf("%d",velha.modo);
     //se tiver escolhido a opcao 3
     printf("\n Voce escolheu jogar contra a maquina, por favor, informe em qual dificuldade voce deseja o desafio:");
-    printf("\n '1' - Nivel facil");
-    printf("\n '2' - Nivel medio");
-    printf("\n '3' - Nivel dificil");
+    printf("\n '4' - Nivel facil");
+    printf("\n '5' - Nivel medio");
+    printf("\n '6' - Nivel dificil");
+    scanf("%d",velha.nivel);
+    printf("\nO usuario devera escolher em qual 'casa' ele jogara!");
+    printf("\n Exemplo de tabuleiro:");
+    printf("\n 1 | 2 | 3");
+    printf("\n ----------");
+    printf("\n 4 | 5 | 6");
+    printf("\n ----------");
+    printf("\n 7 | 8 | 9");
 }
+
+
