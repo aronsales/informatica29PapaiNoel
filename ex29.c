@@ -9,36 +9,26 @@
 #include <time.h>
 #include <math.h>
 #include <locale.h>
+#include <wchar.h>
+
+#define MAXTAB 3
 
 //codigos para usar caracteres especiais da tabela ASCII
-#ifdef __linux__
-#define UL L'\u2518' /* ┘ */
-#define UR L'\u2514' /* └ */
-#define UH L'\u2534' /* ┴ */
-#define DR L'\u250c' /* ┌ */
-#define DL L'\u2510' /* ┐ */
-#define DH L'\u252c' /* ┬ */
-#define VR L'\u251c' /* ├ */
-#define VL L'\u2524' /* ┤ */
-#define VH L'\u253c' /* ┼ */
-#define HH L'\u2500' /* ─ */
-#define VV L'\u2502' /* │ */
-#elif _WIN32 || _WIN64
-#define UL 0xd9 /* ┘ */
-#define UR 0xc0 /* └ */
-#define UH 0xc1 /* ┴ */
-#define DR 0xda /* ┌ */
-#define DL 0xbf /* ┐ */
-#define DH 0xc2 /* ┬ */
-#define VR 0xc3 /* ├ */
-#define VL 0xb4 /* ┤ */
-#define VH 0xc5 /* ┼ */
-#define HH 0xc4 /* ─ */
-#define VV 0xb3 /* │ */
+#define WUL L'\u2518' /* ^VU2518 ┘ */  
+#define WDL L'\u2510' /* ^VU2510 ┐ */  
+#define WDR L'\u250c' /* ^VU250c ┌ */  
 
-#else
-#error "este programa nao eh compativel com o sistema"
-#endif
+#define WUR L'\u2514' /* ^VU2514 └ */  
+#define WVH L'\u253c' /* ^VU253c ┼ */
+#define WHH L'\u2500' /* ^VU2500 ─ */  
+#define WVR L'\u251c' /* ^VU251c ├ */
+
+#define WVL L'\u2524' /* ^VU2524 ┤ */
+
+#define WUH L'\u2534' /* ^VU2534 ┴ */
+#define WDF L'\u252c' /* ^VU252c ┬ */
+
+#define WVV L'\u2502' /* ^VU2502 │ */
 
 typedef struct
 {
@@ -144,3 +134,15 @@ void jogada()
         else
             tabuleiro9=tabuleiro9-1;
 }
+
+void tabuleiro (wchar_t tab[3][3])
+{
+    printf("%lc%lc%lc%lc%lc", tab[0][0], WVV, tab[0][1], WVV, tab[0][2]);
+    printf("\n%lc%lc%lc%lc%lc", WHH, WVH, WHH, WVH, WHH);
+    printf("\n%lc%lc%lc%lc%lc", tab[1][0], WVV, tab[1][1], WVV, tab[1][2]);
+    printf("\n%lc%lc%lc%lc%lc", WHH, WVH, WHH, WVH, WHH);
+    printf("\n%lc%lc%lc%lc%lc", tab[2][0], WVV, tav[2][1], WVV, tab[2][2]);
+    printf("\n");
+    return;
+}
+
