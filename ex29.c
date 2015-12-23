@@ -72,3 +72,12 @@ void inicializacao ()
     printf("\nO programa traz o tradicional Jogo da Velha!\n");
 }
 
+void menu ()
+{
+    printf("\nHa tres modalidades disponiveis: \n Pressione '1' se voce deseja um jogo com dois humanos; \n '2' se voce deseja ver uma partida simulada entre dois computadores; \n '3' se voce deseja jogar contra a maquina!\n");
+    //se tiver escolhido a opcao 3
+    printf("\n Voce escolheu jogar contra a maquina, por favor, informe em qual dificuldade voce deseja o desafio:");
+    printf("\n '1' - Nivel facil");
+    printf("\n '2' - Nivel medio");
+    printf("\n '3' - Nivel dificil");
+}
