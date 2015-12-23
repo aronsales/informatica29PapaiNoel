@@ -47,6 +47,10 @@ int nivelfacil(int tab[MAXTAB][MAXTAB], int vez);
 int nivelmedio(int tab[MAXTAB][MAXTAB], int vez);
 int niveldificil(int tab[MAXTAB][MAXTAB], int vez);
 
+int tabuleiro1,tabuleiro2,tabuleiro3,tabuleiro4,tabuleiro5,tabuleiro6,tabuleiro7,tabuleiro8,tabuleiro9;
+int jogada;
+int turnojogador;
+
 Velha velha;
 
 void inicializacao ()
@@ -137,6 +141,7 @@ int jogada()
 
 int nivelfacil ()
 {
+    int jogadafacil;
     if(jogadafacil==0)
     {
         srand(time(NULL));
@@ -222,10 +227,6 @@ int nivelfacil ()
         }
     }
 }
-
-
-
-
 
 void tabuleiro (wchar_t tab[3][3])
 {
