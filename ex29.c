@@ -18,15 +18,11 @@
 #define DR L'\u250c' /* ┌ */
 #define DL L'\u2510' /* ┐ */
 #define DH L'\u252c' /* ┬ */
-
 #define VR L'\u251c' /* ├ */
-
 #define VL L'\u2524' /* ┤ */
-
 #define VH L'\u253c' /* ┼ */
 #define HH L'\u2500' /* ─ */
 #define VV L'\u2502' /* │ */
-
 #elif _WIN32 || _WIN64
 #define UL 0xd9 /* ┘ */
 #define UR 0xc0 /* └ */
@@ -34,11 +30,8 @@
 #define DR 0xda /* ┌ */
 #define DL 0xbf /* ┐ */
 #define DH 0xc2 /* ┬ */
-
 #define VR 0xc3 /* ├ */
-
 #define VL 0xb4 /* ┤ */
-
 #define VH 0xc5 /* ┼ */
 #define HH 0xc4 /* ─ */
 #define VV 0xb3 /* │ */
@@ -92,4 +85,62 @@ void menu ()
     printf("\n 7 | 8 | 9");
 }
 
+void jogada()
+{
+    printf("Escolha a casa que voce quer jogar");
+    scanf("%d", jogada);
 
+    if(jogada==1 && tabuleiro1==0)
+        if(turnojogador==1)
+            tabuleiro1=tabuleiro1+1;
+        else
+            tabuleiro1=tabuleiro1-1;
+
+    if(jogada==2 && tabuleiro2==0)
+        if(turnojogador==1)
+            tabuleiro2=tabuleiro2+1;
+        else
+            tabuleiro2=tabuleiro2-1;
+
+    if(jogada==3 && tabuleiro3==0)
+        if(turnojogador==1)
+            tabuleiro3=tabuleiro3+1;
+        else
+            tabuleiro3=tabuleiro3-1;
+
+    if(jogada==4 && tabuleiro4==0)
+        if(turnojogador==1)
+            tabuleiro4=tabuleiro4+1;
+        else
+            tabuleiro4=tabuleiro4-1;
+
+    if(jogada==5 && tabuleiro5==0)
+        if(turnojogador==1)
+            tabuleiro5=tabuleiro5+1;
+        else
+            tabuleiro5=tabuleiro5-1;
+
+    if(jogada==6 && tabuleiro6==0)
+        if(turnojogador==1)
+            tabuleiro6=tabuleiro6+1;
+        else
+            tabuleiro6=tabuleiro6-1;
+
+    if(jogada==7 && tabuleiro7==0)
+        if(turnojogador==1)
+            tabuleiro7=tabuleiro7+1;
+        else
+            tabuleiro7=tabuleiro7-1;
+
+    if(jogada==8 && tabuleiro8==0)
+        if(turnojogador==1)
+            tabuleiro8=tabuleiro8+1;
+        else
+            tabuleiro8=tabuleiro8-1;
+
+    if(jogada==9 && tabuleiro9==0)
+        if(turnojogador==1)
+            tabuleiro9=tabuleiro9+1;
+        else
+            tabuleiro9=tabuleiro9-1;
+}
