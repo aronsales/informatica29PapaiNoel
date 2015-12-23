@@ -55,7 +55,7 @@ typedef struct
 }Velha;
 
 //prototipo de funcoes
-int inicilizacao(void);
+int inicializacao(void);
 int tabuleiro(void);
 int menu(void);
 int humanos;
@@ -63,4 +63,12 @@ int humanoxpc;
 int nivelfacil(int tab[MAXTAB][MAXTAB], int vez);
 int nivelmedio(int tab[MAXTAB][MAXTAB], int vez);
 int niveldificil(int tab[MAXTAB][MAXTAB], int vez);
+
+
+void inicializacao ()
+{
+    printf("\nBem-vindo(a) ao programa informatica29PapaiNoel!!");
+    printf("\nPrograma criado por: \n Aron Sales de Melo de Medeiros Monteiro, e \n Guido de Lyra Ferrario.");
+    printf("\nO programa traz o tradicional Jogo da Velha!\n");
+}
 
