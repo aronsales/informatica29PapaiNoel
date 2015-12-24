@@ -13,6 +13,7 @@
 #include <string.h>
 
 #define MAXTAB 3
+#define MAXCASAS 9
 
 //codigos para usar caracteres especiais da tabela ASCII
 #define WUL L'\u2518' /* ^VU2518 ┘ */  
@@ -60,13 +61,13 @@ void menu ()
     printf("Pressione '1' se voce deseja um jogo para dois humanos.");
     printf("\n'2' se voce deseja ver uma partida simulada.");
     printf("\n'3' se voce deseja jogar contra a maquina.\n");
-    scanf("%d",//criar variavel);
+    //scanf("%d",/*criar variavel*/)
     //se tiver escolhido a opcao 3
     printf("\n Voce escolheu jogar contra a maquina, por favor, informe em qual dificuldade voce deseja o desafio:");
     printf("\n '4' - Nivel facil");
     printf("\n '5' - Nivel medio");
     printf("\n '6' - Nivel dificil");
-    scanf("%d",//criar variavel);
+    //scanf("%d",//criar variavel)
     printf("\n\n\nO usuario devera escolher em qual 'casa' ele jogara!");
     printf("\n Exemplo de tabuleiro:\n");
     printf("\n  1 | 2 | 3");
@@ -239,7 +240,7 @@ void tabuleiro (wchar_t tab[3][3])
     printf("\n%lc%lc%lc%lc%lc", WHH, WVH, WHH, WVH, WHH);
     printf("\n%lc%lc%lc%lc%lc", tab[1][0], WVV, tab[1][1], WVV, tab[1][2]);
     printf("\n%lc%lc%lc%lc%lc", WHH, WVH, WHH, WVH, WHH);
-    printf("\n%lc%lc%lc%lc%lc", tab[2][0], WVV, tav[2][1], WVV, tab[2][2]);
+    printf("\n%lc%lc%lc%lc%lc", tab[2][0], WVV, tab[2][1], WVV, tab[2][2]);
     printf("\n");
     return;
 }
