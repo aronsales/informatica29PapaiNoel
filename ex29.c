@@ -42,7 +42,7 @@ int nivelfacil(int tab[3][3], int vez); /*nivel facil*/
 int nivelmedio(int tab[3][3], int vez);/*nivel medio*/
 int niveldificil(int tab[3][3], int vez); /*nivel dificil*/
 
-int tabuleiro0,tabuleiro1,tabuleiro2,tabuleiro3,tabuleiro4,tabuleiro5,tabuleiro6,tabuleiro7,tabuleiro8;
+int tabuleiro0=0,tabuleiro1=0,tabuleiro2=0,tabuleiro3=0,tabuleiro4=0,tabuleiro5=0,tabuleiro6=0,tabuleiro7=0,tabuleiro8=0;
 int jogada; //funcao para determinar o local da jogada
 int turnojogador;
 
@@ -147,12 +147,20 @@ int nivelfacil ()
         if(jogada==1 && tabuleiro1==0)
         {
             if(turnojogador=1)
+                tabuleiro0=tabuleiro0+1;
+            else
+                tabuleiro0=tabuleiro0-1;
+            jogadafacil=jogadafacil+1;
+        }
+        if(jogada==2 && tabuleiro2==0)
+        {
+            if(turnojogador=1)
                 tabuleiro1=tabuleiro1+1;
             else
                 tabuleiro1=tabuleiro1-1;
             jogadafacil=jogadafacil+1;
         }
-        if(jogada==2 && tabuleiro2==0)
+        if(jogada==3 && tabuleiro3==0)
         {
             if(turnojogador=1)
                 tabuleiro2=tabuleiro2+1;
@@ -160,7 +168,7 @@ int nivelfacil ()
                 tabuleiro2=tabuleiro2-1;
             jogadafacil=jogadafacil+1;
         }
-        if(jogada==3 && tabuleiro3==0)
+        if(jogada==4 && tabuleiro4==0)
         {
             if(turnojogador=1)
                 tabuleiro3=tabuleiro3+1;
@@ -168,7 +176,8 @@ int nivelfacil ()
                 tabuleiro3=tabuleiro3-1;
             jogadafacil=jogadafacil+1;
         }
-        if(jogada==4 && tabuleiro4==0)
+
+        if(jogada==5 && tabuleiro5==0)
         {
             if(turnojogador=1)
                 tabuleiro4=tabuleiro4+1;
@@ -177,7 +186,7 @@ int nivelfacil ()
             jogadafacil=jogadafacil+1;
         }
 
-        if(jogada==5 && tabuleiro5==0)
+        if(jogada==6 && tabuleiro6==0)
         {
             if(turnojogador=1)
                 tabuleiro5=tabuleiro5+1;
@@ -186,7 +195,7 @@ int nivelfacil ()
             jogadafacil=jogadafacil+1;
         }
 
-        if(jogada==6 && tabuleiro6==0)
+        if(jogada==7 && tabuleiro7==0)
         {
             if(turnojogador=1)
                 tabuleiro6=tabuleiro6+1;
@@ -195,7 +204,7 @@ int nivelfacil ()
             jogadafacil=jogadafacil+1;
         }
 
-        if(jogada==7 && tabuleiro7==0)
+        if(jogada==8 && tabuleiro8==0)
         {
             if(turnojogador=1)
                 tabuleiro7=tabuleiro7+1;
@@ -204,22 +213,13 @@ int nivelfacil ()
             jogadafacil=jogadafacil+1;
         }
 
-        if(jogada==8 && tabuleiro8==0)
+
+        if(jogada==9 && tabuleiro9==0)
         {
             if(turnojogador=1)
                 tabuleiro8=tabuleiro8+1;
             else
                 tabuleiro8=tabuleiro8-1;
-            jogadafacil=jogadafacil+1;
-        }
-
-
-        if(jogada==9 && tabuleiro9==0)
-        {
-            if(turnojogador=1)
-                tabuleiro9=tabuleiro9+1;
-            else
-                tabuleiro9=tabuleiro9-1;
             jogadafacil=jogadafacil+1;
         }
     }
