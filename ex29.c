@@ -10,6 +10,7 @@
 #include <math.h>
 #include <locale.h>
 #include <wchar.h>
+#include <string.h>
 
 #define MAXTAB 3
 
@@ -32,11 +33,11 @@
 
 
 //prototipo de funcoes
-int inicializacao(void);
-int tabuleiro(void);
-int menu(void);
-int humanos(void);
-int humanoxpc(void);
+int inicializacao(void); //breve mensagem de inicio
+int tabuleiro(void); // funcao que imprime o tabuleiro
+int menu(void); // funcao para o menu
+int humanos(void); //funcao para modo de jogo com dois humanos
+int humanoxpc(void); //funcao para modo de jogo com humano x computador
 int nivelfacil(int tab[3][3], int vez); /*nivel facil*/
 int nivelmedio(int tab[3][3], int vez);/*nivel medio*/
 int niveldificil(int tab[3][3], int vez); /*nivel dificil*/
@@ -68,11 +69,11 @@ void menu ()
     scanf("%d",//criar variavel);
     printf("\n\n\nO usuario devera escolher em qual 'casa' ele jogara!");
     printf("\n Exemplo de tabuleiro:\n");
-    printf("\n 1 | 2 | 3");
-    printf("\n ----------");
-    printf("\n 4 | 5 | 6");
-    printf("\n ----------");
-    printf("\n 7 | 8 | 9");
+    printf("\n  1 | 2 | 3");
+    printf("\n -----------");
+    printf("\n  4 | 5 | 6");
+    printf("\n -----------");
+    printf("\n  7 | 8 | 9");
 }
 
 int jogada()
@@ -223,6 +224,14 @@ int nivelfacil ()
         }
     }
 }
+
+void humanos()
+{
+    int vez;
+    printf("\n Voce selecionou o modo de jogo com dois humanos!");
+    printf("\n Jogador 1 usara 'X' e Jogador 2 usara 'O'");
+}
+
 
 void tabuleiro (wchar_t tab[3][3])
 {
