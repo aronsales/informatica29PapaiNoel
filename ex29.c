@@ -225,13 +225,103 @@ void humanos()
 
 void tabuleiro()
 {
-    printf("%lc%lc%lc%lc%lc", tab[0][0], WVV, tab[0][1], WVV, tab[0][2]);
-    printf("\n%lc%lc%lc%lc%lc", WHH, WVH, WHH, WVH, WHH);
-    printf("\n%lc%lc%lc%lc%lc", tab[1][0], WVV, tab[1][1], WVV, tab[1][2]);
-    printf("\n%lc%lc%lc%lc%lc", WHH, WVH, WHH, WVH, WHH);
-    printf("\n%lc%lc%lc%lc%lc", tab[2][0], WVV, tab[2][1], WVV, tab[2][2]);
+    if(tabuleiro0!=0)
+    {
+        if(tabuleiro0==1)
+            printf("X");
+        if(tabuleiro0==-1)
+            printf("O");
+    }
+    else
+        printf(" ");
+    printf(" | ");
+
+    if(tabuleiro1!=0);
+    {
+        if(tabuleiro1==1)
+            printf("X");
+        if(tabuleiro1==-1)
+            printf("O");
+    }
+    else
+        printf(" ");
+    printf(" | ");
+
+    if(tabuleiro2!=0)
+    {
+        if(tabuleiro2==1)
+            printf("X");
+        if(tabuleiro2==-1)
+            printf("O");
+    }
+    else
+        printf(" ");
     printf("\n");
-    return;
+
+    if(tabuleiro3!=0)
+    {
+        if(tabuleiro3==1)
+            printf("X");
+        if(tabuleiro3==-1)
+            printf("O");
+    }
+    else
+        printf(" ");
+    printf(" | ");
+
+    if(tabuleiro4!=0)
+    {
+        if(tabuleiro4==1)
+            printf("X");
+        if(tabuleiro4==-1)
+            printf("O");
+    }
+    else
+        printf(" ");
+    printf(" | ");
+
+    if(tabuleiro5!=0)
+    {
+        if(tabuleiro5==1)
+            printf("X");
+        if(tabuleiro5==-1)
+            printf("O");
+    }
+    else
+        printf(" ");
+    printf("\n");
+
+    if(tabuleiro6!=0)
+    {
+        if(tabuleiro6==1)
+            printf("X");
+        if(tabuleiro6==-1)
+            printf("O");
+    }
+    else
+        printf(" ");
+    printf(" | ");
+
+    if(tabuleiro7!=0)
+    {
+        if(tabuleiro7==1)
+            printf("X");
+        if(tabuleiro7==-1)
+            printf("O");
+    }
+    else
+        printf(" ");
+    printf(" | ");
+
+    if(tabuleiro8!=0)
+    {
+        if(tabuleiro8==1)
+            printf("X");
+        if(tabuleiro8==-1)
+            printf("O");
+    }
+    else
+        printf(" ");
 }
 
 int main (void)
