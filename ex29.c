@@ -33,18 +33,7 @@
 #define WVV L'\u2502' /* ^VU2502 │ */
 
 
-//prototipo de funcoes
-int inicializacao(void); //breve mensagem de inicio
-int tabuleiro(void); // funcao que imprime o tabuleiro
-int menu(void); // funcao para o menu
-int humanos(void); //funcao para modo de jogo com dois humanos
-int humanoxpc(void); //funcao para modo de jogo com humano x computador
-int nivelfacil(int tab[3][3], int vez); /*nivel facil*/
-int nivelmedio(int tab[3][3], int vez);/*nivel medio*/
-int niveldificil(int tab[3][3], int vez); /*nivel dificil*/
-
 int tabuleiro0=0,tabuleiro1=0,tabuleiro2=0,tabuleiro3=0,tabuleiro4=0,tabuleiro5=0,tabuleiro6=0,tabuleiro7=0,tabuleiro8=0;
-int jogada; //funcao para determinar o local da jogada
 int turnojogador;
 
 
@@ -243,5 +232,15 @@ void tabuleiro (wchar_t tab[3][3])
     printf("\n%lc%lc%lc%lc%lc", tab[2][0], WVV, tab[2][1], WVV, tab[2][2]);
     printf("\n");
     return;
+}
+
+int main (void)
+{
+    inicializacao(void);
+    menu(void);
+    setlocale(LC_ALL, "");
+    jogada(void);
+    nivelfacil(int tab[3][3], int vez);
+    tabuleiro(void);
 }
 
