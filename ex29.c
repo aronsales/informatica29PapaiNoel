@@ -223,7 +223,7 @@ void humanos()
 }
 
 
-void tabuleiro (wchar_t tab[3][3])
+void tabuleiro()
 {
     printf("%lc%lc%lc%lc%lc", tab[0][0], WVV, tab[0][1], WVV, tab[0][2]);
     printf("\n%lc%lc%lc%lc%lc", WHH, WVH, WHH, WVH, WHH);
@@ -238,7 +238,7 @@ int main (void)
 {
     inicializacao();
     menu();
-    setlocale(LC_ALL, "");
+    //setlocale(LC_ALL, "");
     tabuleiro();
     jogada();
     tabuleiro();
