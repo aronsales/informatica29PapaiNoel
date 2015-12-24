@@ -59,82 +59,82 @@ void menu ()
     //scanf("%d",//criar variavel)
     printf("\n\n\nO usuario devera escolher em qual 'casa' ele jogara!");
     printf("\n Exemplo de tabuleiro:\n");
-    printf("\n  1 | 2 | 3");
+    printf("\n  0 | 1 | 2");
     printf("\n -----------");
-    printf("\n  4 | 5 | 6");
+    printf("\n  3 | 4 | 5");
     printf("\n -----------");
-    printf("\n  7 | 8 | 9");
+    printf("\n  6 | 7 | 8");
 }
 
-int jogada()
+void jogada()
 {
     printf("Escolha a casa que voce quer jogar");
     scanf("%d", jogada);
 
-    if(jogada==1 && tabuleiro0==0)
+    if(jogada==0 && tabuleiro0==0)
         if(turnojogador==1)
             tabuleiro0=tabuleiro0+1;
         else
             tabuleiro0=tabuleiro0-1;
 
-    if(jogada==2 && tabuleiro1==0)
+    if(jogada==1 && tabuleiro1==0)
         if(turnojogador==1)
             tabuleiro1=tabuleiro1+1;
         else
             tabuleiro1=tabuleiro1-1;
 
-    if(jogada==3 && tabuleiro2==0)
+    if(jogada==2 && tabuleiro2==0)
         if(turnojogador==1)
             tabuleiro2=tabuleiro2+1;
         else
             tabuleiro2=tabuleiro2-1;
 
-    if(jogada==4 && tabuleiro3==0)
+    if(jogada==3 && tabuleiro3==0)
         if(turnojogador==1)
             tabuleiro3=tabuleiro3+1;
         else
             tabuleiro3=tabuleiro3-1;
 
-    if(jogada==5 && tabuleiro4==0)
+    if(jogada==4 && tabuleiro4==0)
         if(turnojogador==1)
             tabuleiro4=tabuleiro4+1;
         else
             tabuleiro4=tabuleiro4-1;
 
-    if(jogada==6 && tabuleiro5==0)
+    if(jogada==5 && tabuleiro5==0)
         if(turnojogador==1)
             tabuleiro5=tabuleiro5+1;
         else
             tabuleiro5=tabuleiro5-1;
 
-    if(jogada==7 && tabuleiro6==0)
+    if(jogada==6 && tabuleiro6==0)
         if(turnojogador==1)
             tabuleiro6=tabuleiro6+1;
         else
             tabuleiro6=tabuleiro6-1;
 
-    if(jogada==8 && tabuleiro7==0)
+    if(jogada==7 && tabuleiro7==0)
         if(turnojogador==1)
             tabuleiro7=tabuleiro7+1;
         else
             tabuleiro7=tabuleiro7-1;
 
-    if(jogada==9 && tabuleiro8==0)
+    if(jogada==8 && tabuleiro8==0)
         if(turnojogador==1)
             tabuleiro8=tabuleiro8+1;
         else
             tabuleiro8=tabuleiro8-1;
 }
 
-int nivelfacil ()
+void nivelfacil ()
 {
     int jogadafacil;
-    if(jogadafacil==0)
+    while(jogadafacil==0)
     {
         srand(time(NULL));
         jogada=rand()%MAXCASAS;
 
-        if(jogada==1 && tabuleiro1==0)
+        if(jogada==0 && tabuleiro0==0)
         {
             if(turnojogador=1)
                 tabuleiro0=tabuleiro0+1;
@@ -142,7 +142,7 @@ int nivelfacil ()
                 tabuleiro0=tabuleiro0-1;
             jogadafacil=jogadafacil+1;
         }
-        if(jogada==2 && tabuleiro2==0)
+        if(jogada==1 && tabuleiro1==0)
         {
             if(turnojogador=1)
                 tabuleiro1=tabuleiro1+1;
@@ -150,7 +150,7 @@ int nivelfacil ()
                 tabuleiro1=tabuleiro1-1;
             jogadafacil=jogadafacil+1;
         }
-        if(jogada==3 && tabuleiro3==0)
+        if(jogada==2 && tabuleiro2==0)
         {
             if(turnojogador=1)
                 tabuleiro2=tabuleiro2+1;
@@ -158,7 +158,7 @@ int nivelfacil ()
                 tabuleiro2=tabuleiro2-1;
             jogadafacil=jogadafacil+1;
         }
-        if(jogada==4 && tabuleiro4==0)
+        if(jogada==3 && tabuleiro3==0)
         {
             if(turnojogador=1)
                 tabuleiro3=tabuleiro3+1;
@@ -167,7 +167,7 @@ int nivelfacil ()
             jogadafacil=jogadafacil+1;
         }
 
-        if(jogada==5 && tabuleiro5==0)
+        if(jogada==4 && tabuleiro4==0)
         {
             if(turnojogador=1)
                 tabuleiro4=tabuleiro4+1;
@@ -176,7 +176,7 @@ int nivelfacil ()
             jogadafacil=jogadafacil+1;
         }
 
-        if(jogada==6 && tabuleiro6==0)
+        if(jogada==5 && tabuleiro5==0)
         {
             if(turnojogador=1)
                 tabuleiro5=tabuleiro5+1;
@@ -185,7 +185,7 @@ int nivelfacil ()
             jogadafacil=jogadafacil+1;
         }
 
-        if(jogada==7 && tabuleiro7==0)
+        if(jogada==6 && tabuleiro6==0)
         {
             if(turnojogador=1)
                 tabuleiro6=tabuleiro6+1;
@@ -194,7 +194,7 @@ int nivelfacil ()
             jogadafacil=jogadafacil+1;
         }
 
-        if(jogada==8 && tabuleiro8==0)
+        if(jogada==7 && tabuleiro7==0)
         {
             if(turnojogador=1)
                 tabuleiro7=tabuleiro7+1;
@@ -204,7 +204,7 @@ int nivelfacil ()
         }
 
 
-        if(jogada==9 && tabuleiro9==0)
+        if(jogada==8 && tabuleiro8==0)
         {
             if(turnojogador=1)
                 tabuleiro8=tabuleiro8+1;
@@ -236,11 +236,13 @@ void tabuleiro (wchar_t tab[3][3])
 
 int main (void)
 {
-    inicializacao(void);
-    menu(void);
+    inicializacao();
+    menu();
     setlocale(LC_ALL, "");
-    jogada(void);
-    nivelfacil(int tab[3][3], int vez);
-    tabuleiro(void);
+    tabuleiro();
+    jogada();
+    tabuleiro();
+    nivelfacil();
+    tabuleiro();
 }
 
