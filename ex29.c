@@ -31,6 +31,8 @@
 
 int tabuleiro0=0,tabuleiro1=0,tabuleiro2=0,tabuleiro3=0,tabuleiro4=0,tabuleiro5=0,tabuleiro6=0,tabuleiro7=0,tabuleiro8=0;
 int mododejogo,dificuldade;
+int turnojogador=1;
+int turnomaquina=-1;
 
 void inicializacao ()
 {
@@ -69,13 +71,8 @@ void inicializacao ()
 
 void humanojoga() //jogada do humano
 {
-    int turnojogador=1;
+    int jogada;
 
-    if(mododejogo==1 && turnojogador==1)
-        turnojogador=turnojogador-2;
-    if(mododejogo==1 && turnjogador==-1)
-        turnojogador=turnojogador+2;
-        
     printf("\nEscolha a casa que voce quer jogar:\n");
     scanf("%d", &jogada);
 
@@ -132,104 +129,111 @@ void humanojoga() //jogada do humano
             tabuleiro8=tabuleiro8+1;
         else
             tabuleiro8=tabuleiro8-1;
+
+    if(mododejogo==1)
+        if(turnojogador==1)
+            turnojogador=turnojogador-2;
+        else
+            turnojogador=turnojogador+2;
+
 }
 
 void nivelfacil () //nivel facil, jogada da maquina
 {
-    int jogadafacil=0,turnojogador=-1,jogadamaquina;
-    while(jogadafacil==0)
+    int marquei=0;
+    int jogadafacil;
+
+    while(marquei==0)
     {
         srand(time(NULL));
-        jogadamaquina=rand()%MAXCASAS;
+        jogadafacil=rand()%MAXCASAS;
 
-        if(jogadamaquina==0 && tabuleiro0==0)
+        if(jogadafacil==0 && tabuleiro0==0)
         {
-            if(turnojogador==1)
+            if(turnomaquina==1)
                 tabuleiro0=tabuleiro0+1;
             else
                 tabuleiro0=tabuleiro0-1;
-            jogadafacil=jogadafacil+1;
+            marquei=marquei+1;
         }
-        if(jogadamaquina==1 && tabuleiro1==0)
+        if(jogadafacil==1 && tabuleiro1==0)
         {
-            if(turnojogador==1)
+            if(turnomaquina==1)
                 tabuleiro1=tabuleiro1+1;
             else
                 tabuleiro1=tabuleiro1-1;
-            jogadafacil=jogadafacil+1;
+            marquei=marquei+1;
         }
-        if(jogadamaquina==2 && tabuleiro2==0)
+        if(jogadafacil==2 && tabuleiro2==0)
         {
-            if(turnojogador==1)
+            if(turnomaquina==1)
                 tabuleiro2=tabuleiro2+1;
             else
                 tabuleiro2=tabuleiro2-1;
-            jogadafacil=jogadafacil+1;
+            marquei=marquei+1;
         }
-        if(jogadamaquina==3 && tabuleiro3==0)
+        if(jogadafacil==3 && tabuleiro3==0)
         {
-            if(turnojogador==1)
+            if(turnomaquina==1)
                 tabuleiro3=tabuleiro3+1;
             else
                 tabuleiro3=tabuleiro3-1;
-            jogadafacil=jogadafacil+1;
+            marquei=marquei+1;
         }
 
-        if(jogadamaquina==4 && tabuleiro4==0)
+        if(jogadafacil==4 && tabuleiro4==0)
         {
-            if(turnojogador==1)
+            if(turnomaquina==1)
                 tabuleiro4=tabuleiro4+1;
             else
                 tabuleiro4=tabuleiro4-1;
-            jogadafacil=jogadafacil+1;
+            marquei=marquei+1;
         }
 
-        if(jogadamaquina==5 && tabuleiro5==0)
+        if(jogadafacil==5 && tabuleiro5==0)
         {
-            if(turnojogador==1)
+            if(turnomaquina==1)
                 tabuleiro5=tabuleiro5+1;
             else
                 tabuleiro5=tabuleiro5-1;
-            jogadafacil=jogadafacil+1;
+            marquei=marquei+1;
         }
 
-        if(jogadamaquina==6 && tabuleiro6==0)
+        if(jogadafacil==6 && tabuleiro6==0)
         {
-            if(turnojogador==1)
+            if(turnomaquina==1)
                 tabuleiro6=tabuleiro6+1;
             else
                 tabuleiro6=tabuleiro6-1;
-            jogadafacil=jogadafacil+1;
+            marquei=marquei+1;
         }
 
-        if(jogadamaquina==7 && tabuleiro7==0)
+        if(jogadafacil==7 && tabuleiro7==0)
         {
-            if(turnojogador==1)
+            if(turnomaquina==1)
                 tabuleiro7=tabuleiro7+1;
             else
                 tabuleiro7=tabuleiro7-1;
-            jogadafacil=jogadafacil+1;
+            marquei=marquei+1;
         }
 
 
-        if(jogadamaquina==8 && tabuleiro8==0)
+        if(jogadafacil==8 && tabuleiro8==0)
         {
-            if(turnojogador==1)
+            if(turnomaquina==1)
                 tabuleiro8=tabuleiro8+1;
             else
                 tabuleiro8=tabuleiro8-1;
-            jogadafacil=jogadafacil+1;
+            marquei=marquei+1;
         }
-        turnojogador=0;
+
+        if(mododejogo==2)
+            if(turnomaquina==1)
+                turnomaquina=turnomaquina-2;
+            else
+                turnomaquina=turnomaquina+2;
     }
 }
-
-/*void humanos()
-{
-    int vez;
-    printf("\n Voce selecionou o modo de jogo com dois humanos!");
-    printf("\n Jogador 1 usara 'X' e Jogador 2 usara 'O'");
-}*/
 
 
 void tabuleiro() //funcao para imprimir as jogadas no tabuleiro
