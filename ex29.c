@@ -29,10 +29,7 @@
 
 #define WVV L'\u2502' /* ^VU2502 │ */
 
-
 int tabuleiro0=0,tabuleiro1=0,tabuleiro2=0,tabuleiro3=0,tabuleiro4=0,tabuleiro5=0,tabuleiro6=0,tabuleiro7=0,tabuleiro8=0;
-int jogada=0;
-
 
 void inicializacao ()
 {
@@ -44,23 +41,29 @@ void inicializacao ()
 /*void menu ()
 {
     printf("\nHa tres modalidades disponiveis: \n");
-    printf("Pressione '1' se voce deseja um jogo para dois humanos.");
+    printf("Pressione");
+    printf("\n'1' se voce deseja um jogo para dois humanos.");
     printf("\n'2' se voce deseja ver uma partida simulada.");
     printf("\n'3' se voce deseja jogar contra a maquina.\n");
-    //scanf("%d",)
-    //se tiver escolhido a opcao 3
-    printf("\n Voce escolheu jogar contra a maquina, por favor, informe em qual dificuldade voce deseja o desafio:");
-    printf("\n '4' - Nivel facil");
-    printf("\n '5' - Nivel medio");
-    printf("\n '6' - Nivel dificil");
-    //scanf("%d",//criar variavel)
-    printf("\n\n\nO usuario devera escolher em qual 'casa' ele jogara!");
-    printf("\n Exemplo de tabuleiro:\n");
-    printf("\n  0 | 1 | 2");
-    printf("\n -----------");
-    printf("\n  3 | 4 | 5");
-    printf("\n -----------");
-    printf("\n  6 | 7 | 8");
+    scanf("%d", &mododejogo)
+    if(mododejogo==2 || mododejogo==3)
+    {
+        printf("\n Voce escolheu jogar contra a maquina, por favor, informe em qual dificuldade voce deseja o desafio:");
+        printf("\n '4' - Nivel facil");
+        printf("\n '5' - Nivel medio");
+        printf("\n '6' - Nivel dificil");
+        scanf("%d", &dificuldade);
+    }
+    if(mododejogo==1 || mododejogo==3)
+    {
+        printf("\n\nO usuario devera escolher em qual 'casa' ele jogara!");
+        printf("\n Exemplo de tabuleiro:\n");
+        printf("\n  0 | 1 | 2");
+        printf("\n -----------");
+        printf("\n  3 | 4 | 5");
+        printf("\n -----------");
+        printf("\n  6 | 7 | 8");
+    }
 }*/
 
 void humanojoga() //jogada do humano
