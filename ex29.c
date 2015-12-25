@@ -30,6 +30,7 @@
 #define WVV L'\u2502' /* ^VU2502 │ */
 
 int tabuleiro0=0,tabuleiro1=0,tabuleiro2=0,tabuleiro3=0,tabuleiro4=0,tabuleiro5=0,tabuleiro6=0,tabuleiro7=0,tabuleiro8=0;
+int mododejogo,dificuldade;
 
 void inicializacao ()
 {
@@ -69,6 +70,12 @@ void inicializacao ()
 void humanojoga() //jogada do humano
 {
     int turnojogador=1;
+
+    if(mododejogo==1 && turnojogador==1)
+        turnojogador=turnojogador-2;
+    if(mododejogo==1 && turnjogador==-1)
+        turnojogador=turnojogador+2;
+        
     printf("\nEscolha a casa que voce quer jogar:\n");
     scanf("%d", &jogada);
 
