@@ -9,10 +9,7 @@
 #include <time.h>
 #include <math.h>
 #include <locale.h>
-#include <wchar.h>
-#include <string.h>
 
-#define MAXTAB 3
 #define MAXCASAS 9
 
 //codigos para usar caracteres especiais da tabela ASCII
@@ -34,7 +31,7 @@
 
 
 int tabuleiro0=0,tabuleiro1=0,tabuleiro2=0,tabuleiro3=0,tabuleiro4=0,tabuleiro5=0,tabuleiro6=0,tabuleiro7=0,tabuleiro8=0;
-int turnojogador;
+int jogada=0;
 
 
 void inicializacao ()
@@ -66,10 +63,11 @@ void inicializacao ()
     printf("\n  6 | 7 | 8");
 }*/
 
-void jogada() //jogada do humano
+void humanojoga() //jogada do humano
 {
-    printf("Escolha a casa que voce quer jogar");
-    scanf("%d", jogada);
+    int turnojogador=1;
+    printf("\nEscolha a casa que voce quer jogar:\n");
+    scanf("%d", &jogada);
 
     if(jogada==0 && tabuleiro0==0)
         if(turnojogador==1)
@@ -128,75 +126,75 @@ void jogada() //jogada do humano
 
 void nivelfacil () //nivel facil, jogada da maquina
 {
-    int jogadafacil;
+    int jogadafacil=0,turnojogador=-1,jogadamaquina;
     while(jogadafacil==0)
     {
         srand(time(NULL));
-        jogadafacil=rand()%MAXCASAS;
+        jogadamaquina=rand()%MAXCASAS;
 
-        if(jogada==0 && tabuleiro0==0)
+        if(jogadamaquina==0 && tabuleiro0==0)
         {
-            if(turnojogador=1)
+            if(turnojogador==1)
                 tabuleiro0=tabuleiro0+1;
             else
                 tabuleiro0=tabuleiro0-1;
             jogadafacil=jogadafacil+1;
         }
-        if(jogada==1 && tabuleiro1==0)
+        if(jogadamaquina==1 && tabuleiro1==0)
         {
-            if(turnojogador=1)
+            if(turnojogador==1)
                 tabuleiro1=tabuleiro1+1;
             else
                 tabuleiro1=tabuleiro1-1;
             jogadafacil=jogadafacil+1;
         }
-        if(jogada==2 && tabuleiro2==0)
+        if(jogadamaquina==2 && tabuleiro2==0)
         {
-            if(turnojogador=1)
+            if(turnojogador==1)
                 tabuleiro2=tabuleiro2+1;
             else
                 tabuleiro2=tabuleiro2-1;
             jogadafacil=jogadafacil+1;
         }
-        if(jogada==3 && tabuleiro3==0)
+        if(jogadamaquina==3 && tabuleiro3==0)
         {
-            if(turnojogador=1)
+            if(turnojogador==1)
                 tabuleiro3=tabuleiro3+1;
             else
                 tabuleiro3=tabuleiro3-1;
             jogadafacil=jogadafacil+1;
         }
 
-        if(jogada==4 && tabuleiro4==0)
+        if(jogadamaquina==4 && tabuleiro4==0)
         {
-            if(turnojogador=1)
+            if(turnojogador==1)
                 tabuleiro4=tabuleiro4+1;
             else
                 tabuleiro4=tabuleiro4-1;
             jogadafacil=jogadafacil+1;
         }
 
-        if(jogada==5 && tabuleiro5==0)
+        if(jogadamaquina==5 && tabuleiro5==0)
         {
-            if(turnojogador=1)
+            if(turnojogador==1)
                 tabuleiro5=tabuleiro5+1;
             else
                 tabuleiro5=tabuleiro5-1;
             jogadafacil=jogadafacil+1;
         }
 
-        if(jogada==6 && tabuleiro6==0)
+        if(jogadamaquina==6 && tabuleiro6==0)
         {
-            if(turnojogador=1)
+            if(turnojogador==1)
                 tabuleiro6=tabuleiro6+1;
             else
                 tabuleiro6=tabuleiro6-1;
             jogadafacil=jogadafacil+1;
         }
 
-        if(jogada==7 && tabuleiro7==0)
+        if(jogadamaquina==7 && tabuleiro7==0)
         {
-            if(turnojogador=1)
+            if(turnojogador==1)
                 tabuleiro7=tabuleiro7+1;
             else
                 tabuleiro7=tabuleiro7-1;
@@ -204,14 +202,15 @@ void nivelfacil () //nivel facil, jogada da maquina
         }
 
 
-        if(jogada==8 && tabuleiro8==0)
+        if(jogadamaquina==8 && tabuleiro8==0)
         {
-            if(turnojogador=1)
+            if(turnojogador==1)
                 tabuleiro8=tabuleiro8+1;
             else
                 tabuleiro8=tabuleiro8-1;
             jogadafacil=jogadafacil+1;
         }
+        turnojogador=0;
     }
 }
 
@@ -234,6 +233,7 @@ void tabuleiro() //funcao para imprimir as jogadas no tabuleiro
     }
     else
         printf(" ");
+
     printf(" | ");
 
     if(tabuleiro1!=0)
@@ -328,37 +328,37 @@ int main (void)
 {
     inicializacao();
     tabuleiro();
-    jogada();
+    humanojoga();
     nivelfacil();
     tabuleiro();
-    jogada();
+    humanojoga();
     nivelfacil();
     tabuleiro();
-    jogada();
+    humanojoga();
     nivelfacil();
     tabuleiro();
-    jogada();
+    humanojoga();
     nivelfacil();
     tabuleiro();
-    jogada();
+    humanojoga();
     nivelfacil();
     tabuleiro();
-    jogada();
+    humanojoga();
     nivelfacil();
     tabuleiro();
-    jogada();
+    humanojoga();
     nivelfacil();
     tabuleiro();
-    jogada();
+    humanojoga();
     nivelfacil();
     tabuleiro();
-    jogada();
+    humanojoga();
     nivelfacil();
     tabuleiro();
-    jogada();
+    humanojoga();
     nivelfacil();
     tabuleiro();
-    jogada();
+    humanojoga();
     nivelfacil();
 }
 
