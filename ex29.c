@@ -44,13 +44,13 @@ void inicializacao ()
     printf("\nO programa traz o tradicional Jogo da Velha!\n");
 }
 
-void menu ()
+/*void menu ()
 {
     printf("\nHa tres modalidades disponiveis: \n");
     printf("Pressione '1' se voce deseja um jogo para dois humanos.");
     printf("\n'2' se voce deseja ver uma partida simulada.");
     printf("\n'3' se voce deseja jogar contra a maquina.\n");
-    //scanf("%d",/*criar variavel*/)
+    //scanf("%d",)
     //se tiver escolhido a opcao 3
     printf("\n Voce escolheu jogar contra a maquina, por favor, informe em qual dificuldade voce deseja o desafio:");
     printf("\n '4' - Nivel facil");
@@ -64,9 +64,9 @@ void menu ()
     printf("\n  3 | 4 | 5");
     printf("\n -----------");
     printf("\n  6 | 7 | 8");
-}
+}*/
 
-void jogada()
+void jogada() //jogada do humano
 {
     printf("Escolha a casa que voce quer jogar");
     scanf("%d", jogada);
@@ -126,13 +126,13 @@ void jogada()
             tabuleiro8=tabuleiro8-1;
 }
 
-void nivelfacil ()
+void nivelfacil () //nivel facil, jogada da maquina
 {
     int jogadafacil;
     while(jogadafacil==0)
     {
         srand(time(NULL));
-        jogada=rand()%MAXCASAS;
+        jogadafacil=rand()%MAXCASAS;
 
         if(jogada==0 && tabuleiro0==0)
         {
@@ -215,15 +215,15 @@ void nivelfacil ()
     }
 }
 
-void humanos()
+/*void humanos()
 {
     int vez;
     printf("\n Voce selecionou o modo de jogo com dois humanos!");
     printf("\n Jogador 1 usara 'X' e Jogador 2 usara 'O'");
-}
+}*/
 
 
-void tabuleiro()
+void tabuleiro() //funcao para imprimir as jogadas no tabuleiro
 {
     if(tabuleiro0!=0)
     {
@@ -236,7 +236,7 @@ void tabuleiro()
         printf(" ");
     printf(" | ");
 
-    if(tabuleiro1!=0);
+    if(tabuleiro1!=0)
     {
         if(tabuleiro1==1)
             printf("X");
@@ -327,12 +327,38 @@ void tabuleiro()
 int main (void)
 {
     inicializacao();
-    menu();
-    //setlocale(LC_ALL, "");
     tabuleiro();
     jogada();
-    tabuleiro();
     nivelfacil();
     tabuleiro();
+    jogada();
+    nivelfacil();
+    tabuleiro();
+    jogada();
+    nivelfacil();
+    tabuleiro();
+    jogada();
+    nivelfacil();
+    tabuleiro();
+    jogada();
+    nivelfacil();
+    tabuleiro();
+    jogada();
+    nivelfacil();
+    tabuleiro();
+    jogada();
+    nivelfacil();
+    tabuleiro();
+    jogada();
+    nivelfacil();
+    tabuleiro();
+    jogada();
+    nivelfacil();
+    tabuleiro();
+    jogada();
+    nivelfacil();
+    tabuleiro();
+    jogada();
+    nivelfacil();
 }
 
