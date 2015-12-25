@@ -9,6 +9,8 @@
 #include <time.h>
 #include <math.h>
 #include <locale.h>
+#include <wchar.h>
+#include <string.h>
 
 #define MAXCASAS 9
 
@@ -28,6 +30,9 @@
 #define WDF L'\u252c' /* ^VU252c ┬ */
 
 #define WVV L'\u2502' /* ^VU2502 │ */
+
+#define PRINTGRAF_ON ;
+#define PRINTGRAF_OFF ;
 
 int tabuleiro0=0,tabuleiro1=0,tabuleiro2=0,tabuleiro3=0,tabuleiro4=0,tabuleiro5=0,tabuleiro6=0,tabuleiro7=0,tabuleiro8=0;
 int mododejogo,dificuldade;
@@ -238,6 +243,8 @@ void nivelfacil () //nivel facil, jogada da maquina
 
 void tabuleiro() //funcao para imprimir as jogadas no tabuleiro
 {
+    PRINTGRAF_ON ;
+
     if(tabuleiro0!=0)
     {
         if(tabuleiro0==1)
@@ -248,7 +255,7 @@ void tabuleiro() //funcao para imprimir as jogadas no tabuleiro
     else
         printf(" ");
 
-    printf(" | ");
+    printf("%lc",WVV);
 
     if(tabuleiro1!=0)
     {
@@ -259,7 +266,8 @@ void tabuleiro() //funcao para imprimir as jogadas no tabuleiro
     }
     else
         printf(" ");
-    printf(" | ");
+
+    printf("%lc", WVV);
 
     if(tabuleiro2!=0)
     {
@@ -270,6 +278,13 @@ void tabuleiro() //funcao para imprimir as jogadas no tabuleiro
     }
     else
         printf(" ");
+
+    printf("\n");
+    printf("%lc",WHH);
+    printf("%lc",WVH);
+    printf("%lc",WHH);
+    printf("%lc",WVH);
+    printf("%lc",WHH);
     printf("\n");
 
     if(tabuleiro3!=0)
@@ -281,7 +296,8 @@ void tabuleiro() //funcao para imprimir as jogadas no tabuleiro
     }
     else
         printf(" ");
-    printf(" | ");
+
+    printf("%lc",WVV);
 
     if(tabuleiro4!=0)
     {
@@ -292,7 +308,8 @@ void tabuleiro() //funcao para imprimir as jogadas no tabuleiro
     }
     else
         printf(" ");
-    printf(" | ");
+
+    printf("%lc",WVV);
 
     if(tabuleiro5!=0)
     {
@@ -303,6 +320,13 @@ void tabuleiro() //funcao para imprimir as jogadas no tabuleiro
     }
     else
         printf(" ");
+
+    printf("\n");
+    printf("%lc",WHH);
+    printf("%lc",WVH);
+    printf("%lc",WHH);
+    printf("%lc",WVH);
+    printf("%lc",WHH);
     printf("\n");
 
     if(tabuleiro6!=0)
@@ -314,7 +338,8 @@ void tabuleiro() //funcao para imprimir as jogadas no tabuleiro
     }
     else
         printf(" ");
-    printf(" | ");
+
+    printf("%lc",WVV);
 
     if(tabuleiro7!=0)
     {
@@ -325,7 +350,8 @@ void tabuleiro() //funcao para imprimir as jogadas no tabuleiro
     }
     else
         printf(" ");
-    printf(" | ");
+
+    printf("%lc",WVV);
 
     if(tabuleiro8!=0)
     {
@@ -336,6 +362,8 @@ void tabuleiro() //funcao para imprimir as jogadas no tabuleiro
     }
     else
         printf(" ");
+
+    PRINTGRAF_OFF;
 }
 
 int main (void)
