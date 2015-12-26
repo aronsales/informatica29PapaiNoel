@@ -34,7 +34,6 @@
 #define PRINTGRAF_ON ;
 #define PRINTGRAF_OFF ;
 
-int tabuleiro0=0,tabuleiro1=0,tabuleiro2=0,tabuleiro3=0,tabuleiro4=0,tabuleiro5=0,tabuleiro6=0,tabuleiro7=0,tabuleiro8=0;
 int mododejogo,dificuldade;
 int turnojogador=1;
 int turnomaquina=-1;
@@ -77,66 +76,66 @@ void menu ()
     }
 }
 
-void humanojoga() //jogada do humano
+void humanojoga(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,int *tabuleiro4,int *tabuleiro5,int *tabuleiro6,int *tabuleiro7,int *tabuleiro8)//jogada do humano
 {
     int jogada;
 
     printf("\nEscolha a casa que voce quer jogar:\n");
     scanf("%d", &jogada);
 
-    if(jogada==0 && tabuleiro0==0)
+    if(jogada==0 && *tabuleiro0==0)
         if(turnojogador==1)
-            tabuleiro0=tabuleiro0+1;
+            *tabuleiro0=*tabuleiro0+1;
         else
-            tabuleiro0=tabuleiro0-1;
+            *tabuleiro0=*tabuleiro0-1;
 
-    if(jogada==1 && tabuleiro1==0)
+    if(jogada==1 && *tabuleiro1==0)
         if(turnojogador==1)
-            tabuleiro1=tabuleiro1+1;
+            *tabuleiro1=*tabuleiro1+1;
         else
-            tabuleiro1=tabuleiro1-1;
+            *tabuleiro1=*tabuleiro1-1;
+    
+    if(jogada==2 && *tabuleiro2==0)
+        if(turnojogador==1)
+            *tabuleiro2=*tabuleiro2+1;
+        else
+            *tabuleiro2=*tabuleiro2-1;
 
-    if(jogada==2 && tabuleiro2==0)
+    if(jogada==3 && *tabuleiro3==0)
         if(turnojogador==1)
-            tabuleiro2=tabuleiro2+1;
+            *tabuleiro3=*tabuleiro3+1;
         else
-            tabuleiro2=tabuleiro2-1;
+            *tabuleiro3=*tabuleiro3-1;
 
-    if(jogada==3 && tabuleiro3==0)
+    if(jogada==4 && *tabuleiro4==0)
         if(turnojogador==1)
-            tabuleiro3=tabuleiro3+1;
+            *tabuleiro4=*tabuleiro4+1;
         else
-            tabuleiro3=tabuleiro3-1;
+            *tabuleiro4=*tabuleiro4-1;
 
-    if(jogada==4 && tabuleiro4==0)
+    if(jogada==5 && *tabuleiro5==0)
         if(turnojogador==1)
-            tabuleiro4=tabuleiro4+1;
+            *tabuleiro5=*tabuleiro5+1;
         else
-            tabuleiro4=tabuleiro4-1;
+            *tabuleiro5=*tabuleiro5-1;
 
-    if(jogada==5 && tabuleiro5==0)
+    if(jogada==6 && *tabuleiro6==0)
         if(turnojogador==1)
-            tabuleiro5=tabuleiro5+1;
+            *tabuleiro6=*tabuleiro6+1;
         else
-            tabuleiro5=tabuleiro5-1;
+            *tabuleiro6=*tabuleiro6-1;
 
-    if(jogada==6 && tabuleiro6==0)
+    if(jogada==7 && *tabuleiro7==0)
         if(turnojogador==1)
-            tabuleiro6=tabuleiro6+1;
+            *tabuleiro7=*tabuleiro7+1;
         else
-            tabuleiro6=tabuleiro6-1;
+            *tabuleiro7=*tabuleiro7-1;
 
-    if(jogada==7 && tabuleiro7==0)
+    if(jogada==8 && *tabuleiro8==0)
         if(turnojogador==1)
-            tabuleiro7=tabuleiro7+1;
+            *tabuleiro8=*tabuleiro8+1;
         else
-            tabuleiro7=tabuleiro7-1;
-
-    if(jogada==8 && tabuleiro8==0)
-        if(turnojogador==1)
-            tabuleiro8=tabuleiro8+1;
-        else
-            tabuleiro8=tabuleiro8-1;
+            *tabuleiro8=*tabuleiro8-1;
 
     if(mododejogo==1)
         if(turnojogador==1)
@@ -146,7 +145,7 @@ void humanojoga() //jogada do humano
 
 }
 
-void nivelfacil () //nivel facil, jogada da maquina
+void nivelfacil(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,int *tabuleiro4,int *tabuleiro5,int *tabuleiro6,int *tabuleiro7,int *tabuleiro8)//nivel facil, jogada da maquina
 {
     int marquei=0;
     int jogadafacil;
@@ -156,82 +155,82 @@ void nivelfacil () //nivel facil, jogada da maquina
         srand(time(NULL));
         jogadafacil=rand()%MAXCASAS;
 
-        if(jogadafacil==0 && tabuleiro0==0)
+        if(jogadafacil==0 && *tabuleiro0==0)
         {
             if(turnomaquina==1)
-                tabuleiro0=tabuleiro0+1;
+                *tabuleiro0=*tabuleiro0+1;
             else
-                tabuleiro0=tabuleiro0-1;
+                *tabuleiro0=*tabuleiro0-1;
             marquei=marquei+1;
         }
-        if(jogadafacil==1 && tabuleiro1==0)
+        if(jogadafacil==1 && *tabuleiro1==0)
         {
             if(turnomaquina==1)
-                tabuleiro1=tabuleiro1+1;
+                *tabuleiro1=*tabuleiro1+1;
             else
-                tabuleiro1=tabuleiro1-1;
+                *tabuleiro1=*tabuleiro1-1;
             marquei=marquei+1;
         }
-        if(jogadafacil==2 && tabuleiro2==0)
+        if(jogadafacil==2 && *tabuleiro2==0)
         {
             if(turnomaquina==1)
-                tabuleiro2=tabuleiro2+1;
+                *tabuleiro2=*tabuleiro2+1;
             else
-                tabuleiro2=tabuleiro2-1;
+                *tabuleiro2=*tabuleiro2-1;
             marquei=marquei+1;
         }
-        if(jogadafacil==3 && tabuleiro3==0)
+        if(jogadafacil==3 && *tabuleiro3==0)
         {
             if(turnomaquina==1)
-                tabuleiro3=tabuleiro3+1;
+                *tabuleiro3=*tabuleiro3+1;
             else
-                tabuleiro3=tabuleiro3-1;
-            marquei=marquei+1;
-        }
-
-        if(jogadafacil==4 && tabuleiro4==0)
-        {
-            if(turnomaquina==1)
-                tabuleiro4=tabuleiro4+1;
-            else
-                tabuleiro4=tabuleiro4-1;
+                *tabuleiro3=*tabuleiro3-1;
             marquei=marquei+1;
         }
 
-        if(jogadafacil==5 && tabuleiro5==0)
+        if(jogadafacil==4 && *tabuleiro4==0)
         {
             if(turnomaquina==1)
-                tabuleiro5=tabuleiro5+1;
+                *tabuleiro4=*tabuleiro4+1;
             else
-                tabuleiro5=tabuleiro5-1;
+                *tabuleiro4=*tabuleiro4-1;
             marquei=marquei+1;
         }
 
-        if(jogadafacil==6 && tabuleiro6==0)
+        if(jogadafacil==5 && *tabuleiro5==0)
         {
             if(turnomaquina==1)
-                tabuleiro6=tabuleiro6+1;
+                *tabuleiro5=*tabuleiro5+1;
             else
-                tabuleiro6=tabuleiro6-1;
+                *tabuleiro5=*tabuleiro5-1;
+            marquei=marquei+1;
+        }
+
+        if(jogadafacil==6 && *tabuleiro6==0)
+        {
+            if(turnomaquina==1)
+                *tabuleiro6=*tabuleiro6+1;
+            else
+                *tabuleiro6=*tabuleiro6-1;
             marquei=marquei+1;
         }
 
         if(jogadafacil==7 && tabuleiro7==0)
         {
             if(turnomaquina==1)
-                tabuleiro7=tabuleiro7+1;
+                *tabuleiro7=*tabuleiro7+1;
             else
-                tabuleiro7=tabuleiro7-1;
+                *tabuleiro7=*tabuleiro7-1;
             marquei=marquei+1;
         }
 
 
-        if(jogadafacil==8 && tabuleiro8==0)
+        if(jogadafacil==8 && *tabuleiro8==0)
         {
             if(turnomaquina==1)
-                tabuleiro8=tabuleiro8+1;
+                *tabuleiro8=*tabuleiro8+1;
             else
-                tabuleiro8=tabuleiro8-1;
+                *tabuleiro8=*tabuleiro8-1;
             marquei=marquei+1;
         }
     }
@@ -243,105 +242,105 @@ void nivelfacil () //nivel facil, jogada da maquina
 
 }
 
-void fim() //funcao para calcular o vencedor da partida
+void fim(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,int *tabuleiro4,int *tabuleiro5,int *tabuleiro6,int *tabuleiro7,int *tabuleiro8) //funcao para calcular o vencedor da partida
 {
-    if(tabuleiro0==1 && tabuleiro1==1 && tabuleiro2==1)
+    if(*tabuleiro0==1 && *tabuleiro1==1 && *tabuleiro2==1)
     {
         vencedor=1;
         printf("\nX ganhou ! ! ! \n");
     }
-    if(tabuleiro3==1 && tabuleiro4==1 && tabuleiro5==1)
+    if(*tabuleiro3==1 && *tabuleiro4==1 && *tabuleiro5==1)
     {
         vencedor=1;
         printf("\nX ganhou ! ! ! \n");
     }
-    if(tabuleiro6==1 && tabuleiro7==1 && tabuleiro8==1)
+    if(*tabuleiro6==1 && *tabuleiro7==1 && *tabuleiro8==1)
     {
         vencedor=1;
         printf("\nX ganhou ! ! ! \n");
     }
-    if(tabuleiro0==1 && tabuleiro3==1 && tabuleiro6==1)
+    if(*tabuleiro0==1 && *tabuleiro3==1 && *tabuleiro6==1)
     {
         vencedor=1;
         printf("\nX ganhou ! ! ! \n");
     }
-    if(tabuleiro1==1 && tabuleiro4==1 && tabuleiro7==1)
+    if(*tabuleiro1==1 && *tabuleiro4==1 && *tabuleiro7==1)
     {
         vencedor=1;
         printf("\nX ganhou ! ! ! \n");
     }
-    if(tabuleiro2==1 && tabuleiro5==1 && tabuleiro8==1)
+    if(*tabuleiro2==1 && *tabuleiro5==1 && *tabuleiro8==1)
     {
         vencedor=1;
         printf("\nX ganhou ! ! ! \n");
     }
-    if(tabuleiro0==1 && tabuleiro4==1 && tabuleiro8==1)
+    if(*tabuleiro0==1 && *tabuleiro4==1 && *tabuleiro8==1)
     {
         vencedor=1;
         printf("\nX ganhou ! ! ! \n");
     }
-    if(tabuleiro2==1 && tabuleiro4==1 && tabuleiro6==1)
+    if(*tabuleiro2==1 && *tabuleiro4==1 && *tabuleiro6==1)
     {
         vencedor=1;
         printf("\nX ganhou ! ! ! \n");
     }
 
-    if(tabuleiro0==-1 && tabuleiro1==-1 && tabuleiro2==-1)
+    if(*tabuleiro0==-1 && *tabuleiro1==-1 && *tabuleiro2==-1)
     {
         vencedor=-1;
         printf("\nO ganhou ! ! ! \n");
     }
-    if(tabuleiro3==-1 && tabuleiro4==-1 && tabuleiro5==-1)
+    if(*tabuleiro3==-1 && *tabuleiro4==-1 && *tabuleiro5==-1)
     {
         vencedor=-1;
         printf("\nO ganhou ! ! ! \n");
     }
-    if(tabuleiro6==-1 && tabuleiro7==-1 && tabuleiro8==-1)
+    if(*tabuleiro6==-1 && *tabuleiro7==-1 && *tabuleiro8==-1)
     {
         vencedor=-1;
         printf("\nO ganhou ! ! ! \n");
     }
-    if(tabuleiro0==-1 && tabuleiro3==-1 && tabuleiro6==-1)
+    if(*tabuleiro0==-1 && *tabuleiro3==-1 && *tabuleiro6==-1)
     {
         vencedor=-1;
         printf("\nO ganhou ! ! ! \n");
     }
-    if(tabuleiro1==-1 && tabuleiro4==-1 && tabuleiro7==-1)
+    if(*tabuleiro1==-1 && *tabuleiro4==-1 && *tabuleiro7==-1)
     {
         vencedor=-1;
         printf("\nO ganhou ! ! ! \n");
     }
-    if(tabuleiro2==-1 && tabuleiro5==-1 && tabuleiro8==-1)
+    if(*tabuleiro2==-1 && *tabuleiro5==-1 && *tabuleiro8==-1)
     {
         vencedor=-1;
         printf("\nO ganhou ! ! ! \n");
     }
-    if(tabuleiro0==-1 && tabuleiro4==-1 && tabuleiro8==-1)
+    if(*tabuleiro0==-1 && *tabuleiro4==-1 && *tabuleiro8==-1)
     {
         vencedor=-1;
         printf("\nO ganhou ! ! ! \n");
     }
-    if(tabuleiro2==-1 && tabuleiro4==-1 && tabuleiro6==-1)
+    if(*tabuleiro2==-1 && *tabuleiro4==-1 && *tabuleiro6==-1)
     {
         vencedor=-1;
         printf("\nO ganhou ! ! ! \n");
     }
-    if(tabuleiro0!=0 && tabuleiro1!=0 && tabuleiro2!=0 && tabuleiro3!=0 && tabuleiro4!=0 && tabuleiro5!=0 && tabuleiro6!=0 && tabuleiro7!=0 && tabuleiro8!=0 && vencedor==0)
+    if(*tabuleiro0!=0 && *tabuleiro1!=0 && *tabuleiro2!=0 && *tabuleiro3!=0 && *tabuleiro4!=0 && *tabuleiro5!=0 && *tabuleiro6!=0 && *tabuleiro7!=0 && *tabuleiro8!=0 && vencedor==0)
         printf("\nDeu Velha! ! ! Jogo empatou\n");
 
 }
 
-void tabuleiro() //funcao para imprimir as jogadas no tabuleiro
+void tabuleiro(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,int *tabuleiro4,int *tabuleiro5,int *tabuleiro6,int *tabuleiro7,int *tabuleiro8) 
+//funcao para imprimir as jogadas no tabuleiro
 {
- 
     PRINTGRAF_ON ;
     printf("\n\n\n");
 
-    if(tabuleiro0!=0)
+    if(*tabuleiro0!=0)
     {
-        if(tabuleiro0==1)
+        if(*tabuleiro0==1)
             printf("X");
-        if(tabuleiro0==-1)
+        if(*tabuleiro0==-1)
             printf("O");
     }
     else
@@ -349,11 +348,11 @@ void tabuleiro() //funcao para imprimir as jogadas no tabuleiro
 
     printf("%lc",WVV);
 
-    if(tabuleiro1!=0)
+    if(*tabuleiro1!=0)
     {
-        if(tabuleiro1==1)
+        if(*tabuleiro1==1)
             printf("X");
-        if(tabuleiro1==-1)
+        if(*tabuleiro1==-1)
             printf("O");
     }
     else
@@ -361,11 +360,11 @@ void tabuleiro() //funcao para imprimir as jogadas no tabuleiro
 
     printf("%lc", WVV);
 
-    if(tabuleiro2!=0)
+    if(*tabuleiro2!=0)
     {
-        if(tabuleiro2==1)
+        if(*tabuleiro2==1)
             printf("X");
-        if(tabuleiro2==-1)
+        if(*tabuleiro2==-1)
             printf("O");
     }
     else
@@ -379,11 +378,11 @@ void tabuleiro() //funcao para imprimir as jogadas no tabuleiro
     printf("%lc",WHH);
     printf("\n");
 
-    if(tabuleiro3!=0)
+    if(*tabuleiro3!=0)
     {
-        if(tabuleiro3==1)
+        if(*tabuleiro3==1)
             printf("X");
-        if(tabuleiro3==-1)
+        if(*tabuleiro3==-1)
             printf("O");
     }
     else
@@ -391,11 +390,11 @@ void tabuleiro() //funcao para imprimir as jogadas no tabuleiro
 
     printf("%lc",WVV);
 
-    if(tabuleiro4!=0)
+    if(*tabuleiro4!=0)
     {
-        if(tabuleiro4==1)
+        if(*tabuleiro4==1)
             printf("X");
-        if(tabuleiro4==-1)
+        if(*tabuleiro4==-1)
             printf("O");
     }
     else
@@ -403,11 +402,11 @@ void tabuleiro() //funcao para imprimir as jogadas no tabuleiro
 
     printf("%lc",WVV);
 
-    if(tabuleiro5!=0)
+    if(*tabuleiro5!=0)
     {
-        if(tabuleiro5==1)
+        if(*tabuleiro5==1)
             printf("X");
-        if(tabuleiro5==-1)
+        if(*tabuleiro5==-1)
             printf("O");
     }
     else
@@ -421,11 +420,11 @@ void tabuleiro() //funcao para imprimir as jogadas no tabuleiro
     printf("%lc",WHH);
     printf("\n");
 
-    if(tabuleiro6!=0)
+    if(*tabuleiro6!=0)
     {
-        if(tabuleiro6==1)
+        if(*tabuleiro6==1)
             printf("X");
-        if(tabuleiro6==-1)
+        if(*tabuleiro6==-1)
             printf("O");
     }
     else
@@ -433,11 +432,11 @@ void tabuleiro() //funcao para imprimir as jogadas no tabuleiro
 
     printf("%lc",WVV);
 
-    if(tabuleiro7!=0)
+    if(*tabuleiro7!=0)
     {
-        if(tabuleiro7==1)
+        if(*tabuleiro7==1)
             printf("X");
-        if(tabuleiro7==-1)
+        if(*tabuleiro7==-1)
             printf("O");
     }
     else
@@ -445,11 +444,11 @@ void tabuleiro() //funcao para imprimir as jogadas no tabuleiro
 
     printf("%lc",WVV);
 
-    if(tabuleiro8!=0)
+    if(*tabuleiro8!=0)
     {
-        if(tabuleiro8==1)
+        if(*tabuleiro8==1)
             printf("X");
-        if(tabuleiro8==-1)
+        if(*tabuleiro8==-1)
             printf("O");
     }
     else
@@ -461,33 +460,35 @@ void tabuleiro() //funcao para imprimir as jogadas no tabuleiro
 }
 
 int main (void)
-{
+{  
+    int tabuleiro0=0,tabuleiro1=0,tabuleiro2=0,tabuleiro3=0,tabuleiro4=0,tabuleiro5=0,tabuleiro6=0,tabuleiro7=0,tabuleiro8=0;
+
     setlocale(LC_ALL, "");
     inicializacao();
     menu();
     if(mododejogo==1)
         while(vencedor==0)
         {
-            tabuleiro();
-            fim();
-            humanojoga();
+            tabuleiro(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8);
+            fim(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8);
+            humanojoga(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8);
         }
     if(mododejogo==2)
         while(vencedor==0)
         {
-            tabuleiro();
-            fim();
-            nivelfacil();
+            tabuleiro(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8);
+            fim(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8);
+            nivelfacil(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8);
         }
     if(mododejogo==3)
         while(vencedor==0)
         {
-            tabuleiro();
-            fim();
-            humanojoga();
-            tabuleiro();
-            fim();
-            nivelfacil();
+            tabuleiro(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8);
+            fim(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8);
+            humanojoga(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8);
+            tabuleiro(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8);
+            fim(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8);
+            nivelfacil(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8);
         }
 }
 
