@@ -15,20 +15,9 @@
 #define MAXCASAS 9
 
 //codigos para usar caracteres especiais da tabela ASCII
-#define WUL L'\u2518' /* ^VU2518 ┘ */  
-#define WDL L'\u2510' /* ^VU2510 ┐ */  
-#define WDR L'\u250c' /* ^VU250c ┌ */  
 
-#define WUR L'\u2514' /* ^VU2514 └ */  
 #define WVH L'\u253c' /* ^VU253c ┼ */
 #define WHH L'\u2500' /* ^VU2500 ─ */  
-#define WVR L'\u251c' /* ^VU251c ├ */
-
-#define WVL L'\u2524' /* ^VU2524 ┤ */
-
-#define WUH L'\u2534' /* ^VU2534 ┴ */
-#define WDF L'\u252c' /* ^VU252c ┬ */
-
 #define WVV L'\u2502' /* ^VU2502 │ */
 
 #define PRINTGRAF_ON ;
@@ -37,7 +26,6 @@
 int mododejogo,dificuldade;
 int turnojogador=1;
 int turnomaquina=-1;
-int vencedor=0;
 
 void inicializacao ()
 {
@@ -242,90 +230,91 @@ void nivelfacil(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
 
 }
 
-void fim(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,int *tabuleiro4,int *tabuleiro5,int *tabuleiro6,int *tabuleiro7,int *tabuleiro8) //funcao para calcular o vencedor da partida
+void fim(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,int *tabuleiro4,int *tabuleiro5,int *tabuleiro6,int *tabuleiro7,int *tabuleiro8,int *vencedor)
+    //funcao para calcular o vencedor da partida
 {
     if(*tabuleiro0==1 && *tabuleiro1==1 && *tabuleiro2==1)
     {
-        vencedor=1;
+        *vencedor=1;
         printf("\nX ganhou ! ! ! \n");
     }
     if(*tabuleiro3==1 && *tabuleiro4==1 && *tabuleiro5==1)
     {
-        vencedor=1;
+        *vencedor=1;
         printf("\nX ganhou ! ! ! \n");
     }
     if(*tabuleiro6==1 && *tabuleiro7==1 && *tabuleiro8==1)
     {
-        vencedor=1;
+        *vencedor=1;
         printf("\nX ganhou ! ! ! \n");
     }
     if(*tabuleiro0==1 && *tabuleiro3==1 && *tabuleiro6==1)
     {
-        vencedor=1;
+        *vencedor=1;
         printf("\nX ganhou ! ! ! \n");
     }
     if(*tabuleiro1==1 && *tabuleiro4==1 && *tabuleiro7==1)
     {
-        vencedor=1;
+        *vencedor=1;
         printf("\nX ganhou ! ! ! \n");
     }
     if(*tabuleiro2==1 && *tabuleiro5==1 && *tabuleiro8==1)
     {
-        vencedor=1;
+        *vencedor=1;
         printf("\nX ganhou ! ! ! \n");
     }
     if(*tabuleiro0==1 && *tabuleiro4==1 && *tabuleiro8==1)
     {
-        vencedor=1;
+        *vencedor=1;
         printf("\nX ganhou ! ! ! \n");
     }
     if(*tabuleiro2==1 && *tabuleiro4==1 && *tabuleiro6==1)
     {
-        vencedor=1;
+        *vencedor=1;
         printf("\nX ganhou ! ! ! \n");
     }
 
     if(*tabuleiro0==-1 && *tabuleiro1==-1 && *tabuleiro2==-1)
     {
-        vencedor=-1;
+        *vencedor=-1;
         printf("\nO ganhou ! ! ! \n");
     }
     if(*tabuleiro3==-1 && *tabuleiro4==-1 && *tabuleiro5==-1)
     {
-        vencedor=-1;
+        *vencedor=-1;
         printf("\nO ganhou ! ! ! \n");
     }
     if(*tabuleiro6==-1 && *tabuleiro7==-1 && *tabuleiro8==-1)
     {
-        vencedor=-1;
+        *vencedor=-1;
         printf("\nO ganhou ! ! ! \n");
     }
     if(*tabuleiro0==-1 && *tabuleiro3==-1 && *tabuleiro6==-1)
     {
-        vencedor=-1;
+        *vencedor=-1;
         printf("\nO ganhou ! ! ! \n");
     }
     if(*tabuleiro1==-1 && *tabuleiro4==-1 && *tabuleiro7==-1)
     {
-        vencedor=-1;
+        *vencedor=-1;
         printf("\nO ganhou ! ! ! \n");
     }
     if(*tabuleiro2==-1 && *tabuleiro5==-1 && *tabuleiro8==-1)
     {
-        vencedor=-1;
+        *vencedor=-1;
         printf("\nO ganhou ! ! ! \n");
     }
     if(*tabuleiro0==-1 && *tabuleiro4==-1 && *tabuleiro8==-1)
     {
-        vencedor=-1;
+        *vencedor=-1;
         printf("\nO ganhou ! ! ! \n");
     }
     if(*tabuleiro2==-1 && *tabuleiro4==-1 && *tabuleiro6==-1)
     {
-        vencedor=-1;
+        *vencedor=-1;
         printf("\nO ganhou ! ! ! \n");
     }
-    if(*tabuleiro0!=0 && *tabuleiro1!=0 && *tabuleiro2!=0 && *tabuleiro3!=0 && *tabuleiro4!=0 && *tabuleiro5!=0 && *tabuleiro6!=0 && *tabuleiro7!=0 && *tabuleiro8!=0 && vencedor==0)
+    if(*tabuleiro0!=0 && *tabuleiro1!=0 && *tabuleiro2!=0 && *tabuleiro3!=0 && *tabuleiro4!=0 && *tabuleiro5!=0 && *tabuleiro6!=0 && *tabuleiro7!=0 && *tabuleiro8!=0 && *vencedor==0)
         printf("\nDeu Velha! ! ! Jogo empatou\n");
 
 }
@@ -462,6 +451,7 @@ void tabuleiro(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,i
 int main (void)
 {  
     int tabuleiro0=0,tabuleiro1=0,tabuleiro2=0,tabuleiro3=0,tabuleiro4=0,tabuleiro5=0,tabuleiro6=0,tabuleiro7=0,tabuleiro8=0;
+    int vencedor=0;
 
     setlocale(LC_ALL, "");
     inicializacao();
@@ -470,24 +460,24 @@ int main (void)
         while(vencedor==0)
         {
             tabuleiro(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8);
-            fim(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8);
+            fim(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&vencedor);
             humanojoga(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8);
         }
     if(mododejogo==2)
         while(vencedor==0)
         {
             tabuleiro(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8);
-            fim(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8);
+            fim(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&vencedor);
             nivelfacil(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8);
         }
     if(mododejogo==3)
         while(vencedor==0)
         {
             tabuleiro(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8);
-            fim(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8);
+            fim(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&vencedor);
             humanojoga(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8);
             tabuleiro(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8);
-            fim(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8);
+            fim(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&vencedor);
             nivelfacil(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8);
         }
 }
