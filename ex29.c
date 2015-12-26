@@ -486,6 +486,7 @@ int main (void)
             fim();
             humanojoga();
             tabuleiro();
+            fim();
             nivelfacil();
         }
 }
