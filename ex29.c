@@ -24,7 +24,6 @@
 #define PRINTGRAF_OFF ;
 
 int mododejogo,dificuldade;
-int turnojogador=1;
 int turnomaquina=-1;
 
 void inicializacao ()
@@ -64,7 +63,7 @@ void menu ()
     }
 }
 
-void humanojoga(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,int *tabuleiro4,int *tabuleiro5,int *tabuleiro6,int *tabuleiro7,int *tabuleiro8)//jogada do humano
+void humanojoga(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,int *tabuleiro4,int *tabuleiro5,int *tabuleiro6,int *tabuleiro7,int *tabuleiro8,int *turnojogador)//jogada do humano
 {
     int jogada;
 
@@ -72,64 +71,64 @@ void humanojoga(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
     scanf("%d", &jogada);
 
     if(jogada==0 && *tabuleiro0==0)
-        if(turnojogador==1)
+        if(*turnojogador==1)
             *tabuleiro0=*tabuleiro0+1;
         else
             *tabuleiro0=*tabuleiro0-1;
 
     if(jogada==1 && *tabuleiro1==0)
-        if(turnojogador==1)
+        if(*turnojogador==1)
             *tabuleiro1=*tabuleiro1+1;
         else
             *tabuleiro1=*tabuleiro1-1;
     
     if(jogada==2 && *tabuleiro2==0)
-        if(turnojogador==1)
+        if(*turnojogador==1)
             *tabuleiro2=*tabuleiro2+1;
         else
             *tabuleiro2=*tabuleiro2-1;
 
     if(jogada==3 && *tabuleiro3==0)
-        if(turnojogador==1)
+        if(*turnojogador==1)
             *tabuleiro3=*tabuleiro3+1;
         else
             *tabuleiro3=*tabuleiro3-1;
 
     if(jogada==4 && *tabuleiro4==0)
-        if(turnojogador==1)
+        if(*turnojogador==1)
             *tabuleiro4=*tabuleiro4+1;
         else
             *tabuleiro4=*tabuleiro4-1;
 
     if(jogada==5 && *tabuleiro5==0)
-        if(turnojogador==1)
+        if(*turnojogador==1)
             *tabuleiro5=*tabuleiro5+1;
         else
             *tabuleiro5=*tabuleiro5-1;
 
     if(jogada==6 && *tabuleiro6==0)
-        if(turnojogador==1)
+        if(*turnojogador==1)
             *tabuleiro6=*tabuleiro6+1;
         else
             *tabuleiro6=*tabuleiro6-1;
 
     if(jogada==7 && *tabuleiro7==0)
-        if(turnojogador==1)
+        if(*turnojogador==1)
             *tabuleiro7=*tabuleiro7+1;
         else
             *tabuleiro7=*tabuleiro7-1;
 
     if(jogada==8 && *tabuleiro8==0)
-        if(turnojogador==1)
+        if(*turnojogador==1)
             *tabuleiro8=*tabuleiro8+1;
         else
             *tabuleiro8=*tabuleiro8-1;
 
     if(mododejogo==1)
-        if(turnojogador==1)
-            turnojogador=turnojogador-2;
+        if(*turnojogador==1)
+            *turnojogador=*turnojogador-2;
         else
-            turnojogador=turnojogador+2;
+            *turnojogador=*turnojogador+2;
 
 }
 
@@ -452,6 +451,8 @@ int main (void)
 {  
     int tabuleiro0=0,tabuleiro1=0,tabuleiro2=0,tabuleiro3=0,tabuleiro4=0,tabuleiro5=0,tabuleiro6=0,tabuleiro7=0,tabuleiro8=0;
     int vencedor=0;
+    int turnojogador=1;
+    //int turnomaquina=-1;
 
     setlocale(LC_ALL, "");
     inicializacao();
@@ -461,7 +462,7 @@ int main (void)
         {
             tabuleiro(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8);
             fim(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&vencedor);
-            humanojoga(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8);
+            humanojoga(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&turnojogador);
         }
     if(mododejogo==2)
         while(vencedor==0)
@@ -475,7 +476,7 @@ int main (void)
         {
             tabuleiro(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8);
             fim(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&vencedor);
-            humanojoga(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8);
+            humanojoga(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&turnojogador);
             tabuleiro(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8);
             fim(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&vencedor);
             nivelfacil(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8);
