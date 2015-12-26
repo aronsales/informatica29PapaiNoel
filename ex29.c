@@ -245,6 +245,7 @@ void tabuleiro() //funcao para imprimir as jogadas no tabuleiro
 {
     char tab[3][3];
     PRINTGRAF_ON ;
+    printf("\n");
 
     if(tabuleiro0!=0)
     {
@@ -404,5 +405,6 @@ int main (void)
     tabuleiro();
     humanojoga();
     nivelfacil();
+    tabuleiro();
 }
 
