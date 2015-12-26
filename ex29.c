@@ -23,7 +23,6 @@
 #define PRINTGRAF_ON ;
 #define PRINTGRAF_OFF ;
 
-int mododejogo,dificuldade;
 
 void inicializacao ()
 {
@@ -32,23 +31,23 @@ void inicializacao ()
     printf("\nO programa traz o tradicional Jogo da Velha!\n");
 }
 
-void menu ()
+void menu (int *mododejogo,int *dificuldade)
 {
     printf("\nHa tres modalidades disponiveis: \n");
     printf("Pressione:");
     printf("\n'1' se voce deseja um jogo para dois humanos.");
     printf("\n'2' se voce deseja ver uma partida simulada.");
     printf("\n'3' se voce deseja jogar contra a maquina.\n");
-    scanf("%d", &mododejogo);
-    if(mododejogo==2 || mododejogo==3)
+    scanf("%d", &*mododejogo);
+    if(*mododejogo==2 || *mododejogo==3)
     {
         printf("\n Voce escolheu jogar contra a maquina, por favor, informe em qual dificuldade voce deseja o desafio:");
         printf("\n '4' - Nivel facil");
         printf("\n '5' - Nivel medio");
         printf("\n '6' - Nivel dificil\n");
-        scanf("%d", &dificuldade);
+        scanf("%d", &*dificuldade);
     }
-    if(mododejogo==1 || mododejogo==3)
+    if(*mododejogo==1 || *mododejogo==3)
     {
         printf("\n\nO usuario devera escolher em qual 'casa' ele jogara!");
         printf("\n Exemplo de tabuleiro:\n");
@@ -62,7 +61,8 @@ void menu ()
     }
 }
 
-void humanojoga(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,int *tabuleiro4,int *tabuleiro5,int *tabuleiro6,int *tabuleiro7,int *tabuleiro8,int *turnojogador)//jogada do humano
+void humanojoga(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,int *tabuleiro4,int *tabuleiro5,int *tabuleiro6,int *tabuleiro7,int *tabuleiro8,int *turnojogador,int *mododejogo)
+    //jogada do humano
 {
     int jogada;
 
@@ -123,7 +123,7 @@ void humanojoga(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
         else
             *tabuleiro8=*tabuleiro8-1;
 
-    if(mododejogo==1)
+    if(*mododejogo==1)
         if(*turnojogador==1)
             *turnojogador=*turnojogador-2;
         else
@@ -131,7 +131,8 @@ void humanojoga(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
 
 }
 
-void nivelfacil(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,int *tabuleiro4,int *tabuleiro5,int *tabuleiro6,int *tabuleiro7,int *tabuleiro8,int *turnomaquina)//nivel facil, jogada da maquina
+void nivelfacil(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,int *tabuleiro4,int *tabuleiro5,int *tabuleiro6,int *tabuleiro7,int *tabuleiro8,int *turnomaquina,int *mododejogo)
+    //nivel facil, jogada da maquina
 {
     int marquei=0;
     int jogadafacil;
@@ -220,7 +221,7 @@ void nivelfacil(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
             marquei=marquei+1;
         }
     }
-    if(mododejogo==2)
+    if(*mododejogo==2)
         if(*turnomaquina==1)
             *turnomaquina=-1;
         else
@@ -452,34 +453,34 @@ int main (void)
     int vencedor=0;
     int turnojogador=1;
     int turnomaquina=-1;
-    //int turnomaquina=-1;
+    int mododejogo, dificuldade;
 
     setlocale(LC_ALL, "");
     inicializacao();
-    menu();
+    menu(&mododejogo, &dificuldade);
     if(mododejogo==1)
         while(vencedor==0)
         {
             tabuleiro(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8);
             fim(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&vencedor);
-            humanojoga(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&turnojogador);
+            humanojoga(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&turnojogador,&mododejogo);
         }
     if(mododejogo==2)
         while(vencedor==0)
         {
             tabuleiro(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8);
             fim(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&vencedor);
-            nivelfacil(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&turnomaquina);
+            nivelfacil(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&turnomaquina,&mododejogo);
         }
     if(mododejogo==3)
         while(vencedor==0)
         {
             tabuleiro(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8);
             fim(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&vencedor);
-            humanojoga(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&turnojogador);
+            humanojoga(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&turnojogador,&mododejogo);
             tabuleiro(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8);
             fim(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&vencedor);
-            nivelfacil(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&turnomaquina);
+            nivelfacil(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&turnomaquina,&mododejogo);
         }
 }
 
