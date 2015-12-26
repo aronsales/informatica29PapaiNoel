@@ -71,7 +71,8 @@ void menu ()
         printf("\n -----------");
         printf("\n  3 | 4 | 5");
         printf("\n -----------");
-        printf("\n  6 | 7 | 8");
+        printf("\n  6 | 7 | 8\n");
+        printf("\n SE O JOGADOR PRESSIONAR UM NUMERO DE UMA CASA JA OCULPADA, PERDERA' A VEZ!!\n");
     }
 }
 
