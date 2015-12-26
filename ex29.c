@@ -50,7 +50,7 @@ void inicializacao ()
 void menu ()
 {
     printf("\nHa tres modalidades disponiveis: \n");
-    printf("Pressione");
+    printf("Pressione:");
     printf("\n'1' se voce deseja um jogo para dois humanos.");
     printf("\n'2' se voce deseja ver uma partida simulada.");
     printf("\n'3' se voce deseja jogar contra a maquina.\n");
@@ -72,6 +72,7 @@ void menu ()
         printf("\n  3 | 4 | 5");
         printf("\n -----------");
         printf("\n  6 | 7 | 8\n");
+        printf("\n Os numeros representam as opcoes de 'casa' para a execucao da jogada!\n\n");
         printf("\n SE O JOGADOR PRESSIONAR UM NUMERO DE UMA CASA JA OCULPADA, PERDERA' A VEZ!!\n");
     }
 }
