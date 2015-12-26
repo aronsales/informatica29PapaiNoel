@@ -244,7 +244,7 @@ void nivelfacil () //nivel facil, jogada da maquina
 
 void tabuleiro() //funcao para imprimir as jogadas no tabuleiro
 {
-    char tab[3][3];
+ 
     PRINTGRAF_ON ;
     printf("\n\n\n");
 
@@ -256,9 +256,9 @@ void tabuleiro() //funcao para imprimir as jogadas no tabuleiro
             printf("O");
     }
     else
-        printf("");
+        printf(" ");
 
-    printf("%lc%lc",tab[0][0],WVV);
+    printf("%lc",WVV);
 
     if(tabuleiro1!=0)
     {
@@ -270,7 +270,7 @@ void tabuleiro() //funcao para imprimir as jogadas no tabuleiro
     else
         printf(" ");
 
-    printf("%lc%lc", tab[0][1],WVV);
+    printf("%lc", WVV);
 
     if(tabuleiro2!=0)
     {
@@ -300,7 +300,7 @@ void tabuleiro() //funcao para imprimir as jogadas no tabuleiro
     else
         printf(" ");
 
-    printf("%lc%lc",tab[1][0],WVV);
+    printf("%lc",WVV);
 
     if(tabuleiro4!=0)
     {
@@ -312,7 +312,7 @@ void tabuleiro() //funcao para imprimir as jogadas no tabuleiro
     else
         printf(" ");
 
-    printf("%lc%lc",tab[1][1],WVV);
+    printf("%lc",WVV);
 
     if(tabuleiro5!=0)
     {
@@ -342,7 +342,7 @@ void tabuleiro() //funcao para imprimir as jogadas no tabuleiro
     else
         printf(" ");
 
-    printf("%lc%lc",tab[2][0],WVV);
+    printf("%lc",WVV);
 
     if(tabuleiro7!=0)
     {
@@ -354,7 +354,7 @@ void tabuleiro() //funcao para imprimir as jogadas no tabuleiro
     else
         printf(" ");
 
-    printf("%lc%lc",tab[2][1],WVV);
+    printf("%lc",WVV);
 
     if(tabuleiro8!=0)
     {
