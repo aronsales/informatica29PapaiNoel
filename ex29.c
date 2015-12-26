@@ -60,7 +60,7 @@ void menu ()
         printf("\n Voce escolheu jogar contra a maquina, por favor, informe em qual dificuldade voce deseja o desafio:");
         printf("\n '4' - Nivel facil");
         printf("\n '5' - Nivel medio");
-        printf("\n '6' - Nivel dificil");
+        printf("\n '6' - Nivel dificil\n");
         scanf("%d", &dificuldade);
     }
     if(mododejogo==1 || mododejogo==3)
@@ -246,7 +246,7 @@ void tabuleiro() //funcao para imprimir as jogadas no tabuleiro
 {
     char tab[3][3];
     PRINTGRAF_ON ;
-    printf("\n");
+    printf("\n\n\n");
 
     if(tabuleiro0!=0)
     {
@@ -270,7 +270,7 @@ void tabuleiro() //funcao para imprimir as jogadas no tabuleiro
     else
         printf(" ");
 
-    printf("%lc%lc%lc", tab[0][1],WVV,tab[0][2]);
+    printf("%lc%lc", tab[0][1],WVV);
 
     if(tabuleiro2!=0)
     {
@@ -365,6 +365,8 @@ void tabuleiro() //funcao para imprimir as jogadas no tabuleiro
     }
     else
         printf(" ");
+
+    printf("\n");
 
     PRINTGRAF_OFF;
 }
