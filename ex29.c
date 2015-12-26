@@ -243,7 +243,7 @@ void nivelfacil () //nivel facil, jogada da maquina
 
 }
 
-void fim()
+void fim() //funcao para calcular o vencedor da partida
 {
     if(tabuleiro0==1 && tabuleiro1==1 && tabuleiro2==1)
     {
@@ -285,6 +285,48 @@ void fim()
         vencedor=1;
         printf("\nX ganhou ! ! ! \n");
     }
+
+    if(tabuleiro0==-1 && tabuleiro1==-1 && tabuleiro2==-1)
+    {
+        vencedor=-1;
+        printf("\nO ganhou ! ! ! \n");
+    }
+    if(tabuleiro3==-1 && tabuleiro4==-1 && tabuleiro5==-1)
+    {
+        vencedor=-1;
+        printf("\nO ganhou ! ! ! \n");
+    }
+    if(tabuleiro6==-1 && tabuleiro7==-1 && tabuleiro8==-1)
+    {
+        vencedor=-1;
+        printf("\nO ganhou ! ! ! \n");
+    }
+    if(tabuleiro0==-1 && tabuleiro3==-1 && tabuleiro6==-1)
+    {
+        vencedor=-1;
+        printf("\nO ganhou ! ! ! \n");
+    }
+    if(tabuleiro1==-1 && tabuleiro4==-1 && tabuleiro7==-1)
+    {
+        vencedor=-1;
+        printf("\nO ganhou ! ! ! \n");
+    }
+    if(tabuleiro2==-1 && tabuleiro5==-1 && tabuleiro8==-1)
+    {
+        vencedor=-1;
+        printf("\nO ganhou ! ! ! \n");
+    }
+    if(tabuleiro0==-1 && tabuleiro4==-1 && tabuleiro8==-1)
+    {
+        vencedor=-1;
+        printf("\nO ganhou ! ! ! \n");
+    }
+    if(tabuleiro2==-1 && tabuleiro4==-1 && tabuleiro6==-1)
+    {
+        vencedor=-1;
+        printf("\nO ganhou ! ! ! \n");
+    }
+
 }
 
 void tabuleiro() //funcao para imprimir as jogadas no tabuleiro
