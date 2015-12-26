@@ -24,7 +24,6 @@
 #define PRINTGRAF_OFF ;
 
 int mododejogo,dificuldade;
-int turnomaquina=-1;
 
 void inicializacao ()
 {
@@ -132,7 +131,7 @@ void humanojoga(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
 
 }
 
-void nivelfacil(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,int *tabuleiro4,int *tabuleiro5,int *tabuleiro6,int *tabuleiro7,int *tabuleiro8)//nivel facil, jogada da maquina
+void nivelfacil(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,int *tabuleiro4,int *tabuleiro5,int *tabuleiro6,int *tabuleiro7,int *tabuleiro8,int *turnomaquina)//nivel facil, jogada da maquina
 {
     int marquei=0;
     int jogadafacil;
@@ -144,7 +143,7 @@ void nivelfacil(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
 
         if(jogadafacil==0 && *tabuleiro0==0)
         {
-            if(turnomaquina==1)
+            if(*turnomaquina==1)
                 *tabuleiro0=*tabuleiro0+1;
             else
                 *tabuleiro0=*tabuleiro0-1;
@@ -152,7 +151,7 @@ void nivelfacil(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
         }
         if(jogadafacil==1 && *tabuleiro1==0)
         {
-            if(turnomaquina==1)
+            if(*turnomaquina==1)
                 *tabuleiro1=*tabuleiro1+1;
             else
                 *tabuleiro1=*tabuleiro1-1;
@@ -160,7 +159,7 @@ void nivelfacil(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
         }
         if(jogadafacil==2 && *tabuleiro2==0)
         {
-            if(turnomaquina==1)
+            if(*turnomaquina==1)
                 *tabuleiro2=*tabuleiro2+1;
             else
                 *tabuleiro2=*tabuleiro2-1;
@@ -168,7 +167,7 @@ void nivelfacil(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
         }
         if(jogadafacil==3 && *tabuleiro3==0)
         {
-            if(turnomaquina==1)
+            if(*turnomaquina==1)
                 *tabuleiro3=*tabuleiro3+1;
             else
                 *tabuleiro3=*tabuleiro3-1;
@@ -177,7 +176,7 @@ void nivelfacil(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
 
         if(jogadafacil==4 && *tabuleiro4==0)
         {
-            if(turnomaquina==1)
+            if(*turnomaquina==1)
                 *tabuleiro4=*tabuleiro4+1;
             else
                 *tabuleiro4=*tabuleiro4-1;
@@ -186,7 +185,7 @@ void nivelfacil(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
 
         if(jogadafacil==5 && *tabuleiro5==0)
         {
-            if(turnomaquina==1)
+            if(*turnomaquina==1)
                 *tabuleiro5=*tabuleiro5+1;
             else
                 *tabuleiro5=*tabuleiro5-1;
@@ -195,7 +194,7 @@ void nivelfacil(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
 
         if(jogadafacil==6 && *tabuleiro6==0)
         {
-            if(turnomaquina==1)
+            if(*turnomaquina==1)
                 *tabuleiro6=*tabuleiro6+1;
             else
                 *tabuleiro6=*tabuleiro6-1;
@@ -204,7 +203,7 @@ void nivelfacil(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
 
         if(jogadafacil==7 && tabuleiro7==0)
         {
-            if(turnomaquina==1)
+            if(*turnomaquina==1)
                 *tabuleiro7=*tabuleiro7+1;
             else
                 *tabuleiro7=*tabuleiro7-1;
@@ -214,7 +213,7 @@ void nivelfacil(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
 
         if(jogadafacil==8 && *tabuleiro8==0)
         {
-            if(turnomaquina==1)
+            if(*turnomaquina==1)
                 *tabuleiro8=*tabuleiro8+1;
             else
                 *tabuleiro8=*tabuleiro8-1;
@@ -222,10 +221,10 @@ void nivelfacil(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
         }
     }
     if(mododejogo==2)
-        if(turnomaquina==1)
-            turnomaquina=-1;
+        if(*turnomaquina==1)
+            *turnomaquina=-1;
         else
-            turnomaquina=1;
+            *turnomaquina=1;
 
 }
 
@@ -452,6 +451,7 @@ int main (void)
     int tabuleiro0=0,tabuleiro1=0,tabuleiro2=0,tabuleiro3=0,tabuleiro4=0,tabuleiro5=0,tabuleiro6=0,tabuleiro7=0,tabuleiro8=0;
     int vencedor=0;
     int turnojogador=1;
+    int turnomaquina=-1;
     //int turnomaquina=-1;
 
     setlocale(LC_ALL, "");
@@ -469,7 +469,7 @@ int main (void)
         {
             tabuleiro(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8);
             fim(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&vencedor);
-            nivelfacil(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8);
+            nivelfacil(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&turnomaquina);
         }
     if(mododejogo==3)
         while(vencedor==0)
@@ -479,7 +479,7 @@ int main (void)
             humanojoga(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&turnojogador);
             tabuleiro(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8);
             fim(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&vencedor);
-            nivelfacil(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8);
+            nivelfacil(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&turnomaquina);
         }
 }
 
