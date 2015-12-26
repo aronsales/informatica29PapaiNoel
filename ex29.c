@@ -232,13 +232,13 @@ void nivelfacil () //nivel facil, jogada da maquina
                 tabuleiro8=tabuleiro8-1;
             marquei=marquei+1;
         }
-
-        if(mododejogo==2)
-            if(turnomaquina==1)
-                turnomaquina=turnomaquina-2;
-            else
-                turnomaquina=turnomaquina+2;
     }
+    if(mododejogo==2)
+        if(turnomaquina==1)
+            turnomaquina=-1;
+        else
+            turnomaquina=1;
+
 }
 
 
