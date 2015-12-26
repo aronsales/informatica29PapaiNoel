@@ -3,6 +3,7 @@ Repositório criado para o desenvolvimento do exercício de numero 29 da discipl
 
 #O jogo:
 O jogo possui 3 modalidades:
+
 -Humano x Humano 
 
 -Computador x Computador
@@ -10,7 +11,7 @@ O jogo possui 3 modalidades:
 -Humano x Computador
 
 
-Sendo esta ultima dividida em tres niveis: 
+Sendo as duas ultimas divididas em tres niveis: 
 
 1- Facil
 
