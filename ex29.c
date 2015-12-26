@@ -38,6 +38,7 @@ int tabuleiro0=0,tabuleiro1=0,tabuleiro2=0,tabuleiro3=0,tabuleiro4=0,tabuleiro5=
 int mododejogo,dificuldade;
 int turnojogador=1;
 int turnomaquina=-1;
+int vencedor=0;
 
 void inicializacao ()
 {
@@ -46,14 +47,14 @@ void inicializacao ()
     printf("\nO programa traz o tradicional Jogo da Velha!\n");
 }
 
-/*void menu ()
+void menu ()
 {
     printf("\nHa tres modalidades disponiveis: \n");
     printf("Pressione");
     printf("\n'1' se voce deseja um jogo para dois humanos.");
     printf("\n'2' se voce deseja ver uma partida simulada.");
     printf("\n'3' se voce deseja jogar contra a maquina.\n");
-    scanf("%d", &mododejogo)
+    scanf("%d", &mododejogo);
     if(mododejogo==2 || mododejogo==3)
     {
         printf("\n Voce escolheu jogar contra a maquina, por favor, informe em qual dificuldade voce deseja o desafio:");
@@ -72,7 +73,7 @@ void inicializacao ()
         printf("\n -----------");
         printf("\n  6 | 7 | 8");
     }
-}*/
+}
 
 void humanojoga() //jogada do humano
 {
@@ -372,39 +373,26 @@ int main (void)
 {
     setlocale(LC_ALL, "");
     inicializacao();
-    tabuleiro();
-    humanojoga();
-    nivelfacil();
-    tabuleiro();
-    humanojoga();
-    nivelfacil();
-    tabuleiro();
-    humanojoga();
-    nivelfacil();
-    tabuleiro();
-    humanojoga();
-    nivelfacil();
-    tabuleiro();
-    humanojoga();
-    nivelfacil();
-    tabuleiro();
-    humanojoga();
-    nivelfacil();
-    tabuleiro();
-    humanojoga();
-    nivelfacil();
-    tabuleiro();
-    humanojoga();
-    nivelfacil();
-    tabuleiro();
-    humanojoga();
-    nivelfacil();
-    tabuleiro();
-    humanojoga();
-    nivelfacil();
-    tabuleiro();
-    humanojoga();
-    nivelfacil();
-    tabuleiro();
+    menu();
+    if(mododejogo==1)
+        while(vencedor==0)
+        {
+            tabuleiro();
+            humanojoga();
+        }
+    if(mododejogo==2)
+        while(vencedor==0)
+        {
+            tabuleiro();
+            nivelfacil();
+        }
+    if(mododejogo==3)
+        while(vencedor==0)
+        {
+            tabuleiro();
+            humanojoga();
+            tabuleiro();
+            nivelfacil();
+        }
 }
 
