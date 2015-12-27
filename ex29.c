@@ -447,6 +447,11 @@ void tabuleiro(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,i
     PRINTGRAF_OFF;
 }
 
+void despedida()
+{
+    printf("\n\nObrigado por executar o informatica29PapaiNoel!! Boas festas!\n\n");
+}
+
 int main (void)
 {  
     int tabuleiro0=0,tabuleiro1=0,tabuleiro2=0,tabuleiro3=0,tabuleiro4=0,tabuleiro5=0,tabuleiro6=0,tabuleiro7=0,tabuleiro8=0;
@@ -482,5 +487,6 @@ int main (void)
             fim(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&vencedor);
             nivelfacil(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&turnomaquina,&mododejogo);
         }
+    despedida();
 }
 
