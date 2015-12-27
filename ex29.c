@@ -228,6 +228,34 @@ void nivelfacil(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
             *turnomaquina=1;
 
 }
+void nivelmedio(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,int *tabuleiro4,int *tabuleiro5,int *tabuleiro6,int *tabuleiro7,int *tabuleiro8,int *turnomaquina,int *mododejogo)
+{
+    if(*tabuleiro0==1 && *tabuleiro1==1 && *tabuleiro2==0 || *tabuleiro0==-1 && *tabuleiro1==-1 && *tabuleiro2==0)
+    {
+        if(*turnomaquina==1)
+            *tabuleiro2=1;
+        else
+            tabuleiro2=-1;
+        marquei=1;
+    }
+    if(*tabuleiro0==1 && *tabuleiro3==1 && *tabuleiro6==0 || *tabuleiro0==-1 && *tabuleiro3==-1 && *tabuleiro6==0)
+    {
+        if(*turnomaquina==1)
+            *tabuleiro6=1;
+        else
+            tabuleiro6=-1;
+        marquei=1;
+    }
+    if(*tabuleiro0==1 && *tabuleiro4==1 && *tabuleiro8==0 || *tabuleiro0==-1 && *tabuleiro4==-1 && *tabuleiro8==0)
+    {
+        if(*turnomaquina==1)
+            *tabuleiro8=1;
+        else
+            tabuleiro8=-1;
+        marquei=1;
+    }
+
+
 
 void fim(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,int *tabuleiro4,int *tabuleiro5,int *tabuleiro6,int *tabuleiro7,int *tabuleiro8,int *vencedor)
     //funcao para calcular o vencedor da partida
