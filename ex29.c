@@ -80,7 +80,7 @@ void humanojoga(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
             *tabuleiro1=*tabuleiro1+1;
         else
             *tabuleiro1=*tabuleiro1-1;
-    
+
     if(jogada==2 && *tabuleiro2==0)
         if(*turnojogador==1)
             *tabuleiro2=*tabuleiro2+1;
@@ -233,310 +233,310 @@ void nivelmedio(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
 {
     int marquei=0;
     int jogadamedia;
-while(marquei==0)
-{
-    //0 e 1
-    if(*tabuleiro0==1 && *tabuleiro1==1 && *tabuleiro2==0 || *tabuleiro0==-1 && *tabuleiro1==-1 && *tabuleiro2==0)
+    while(marquei==0)
     {
-        if(*turnomaquina==1)
-            *tabuleiro2=1;
-        else
-            *tabuleiro2=-1;
-        marquei=1;
-    }
-    //0 e 2
-    if(*tabuleiro0==1 && *tabuleiro2==1 && *tabuleiro1==0 || *tabuleiro0==-1 && *tabuleiro2==-1 && *tabuleiro1==0)
-    {
-        if(*turnomaquina==1)
-            *tabuleiro1=1;
-        else
-            *tabuleiro1=-1;
-        marquei=1;
-    }  
-    //0 e 3
-    if(*tabuleiro0==1 && *tabuleiro3==1 && *tabuleiro6==0 || *tabuleiro0==-1 && *tabuleiro3==-1 && *tabuleiro6==0)
-    {
-        if(*turnomaquina==1)
-            *tabuleiro6=1;
-        else
-            *tabuleiro6=-1;
-        marquei=1;
-    }
-    //1 e 2
-    if(*tabuleiro1==1 && *tabuleiro2==1 && tabuleiro0==0 || *tabuleiro1==-1 && *tabuleiro2==-1 && *tabuleiro0==0)
-    {
-        if(*turnomaquina==1)
-            *tabuleiro0=1;
-        else
-            *tabuleiro0=-1;
-        marquei=1;
-    }
-    //0 e 4 (diagonal)
-    if(*tabuleiro0==1 && *tabuleiro4==1 && *tabuleiro8==0 || *tabuleiro0==-1 && *tabuleiro4==-1 && *tabuleiro8==0)
-    {
-        if(*turnomaquina==1)
-            *tabuleiro8=1;
-        else
-            *tabuleiro8=-1;
-        marquei=1;
-    }
-    //3 e 4
-    if(*tabuleiro3==1 && *tabuleiro4==1 && *tabuleiro5==0 || *tabuleiro3==-1 && *tabuleiro4==-1 && *tabuleiro5==0)
-    {
-        if(*turnomaquina==1)
-            *tabuleiro5=1;
-        else
-            *tabuleiro5=-1;
-        marquei=1;
-    }
-    //3 e 5
-    if(*tabuleiro3==1 && *tabuleiro5==1 && *tabuleiro4==0 || *tabuleiro3==-1 && *tabuleiro5==-1 && *tabuleiro4==0)
-    {
-        if(*turnomaquina==1)
-            *tabuleiro4=1;
-        else
-            *tabuleiro4=-1;
-        marquei=1;
-    }
-    //4 e 5
-   if(*tabuleiro4==1 && *tabuleiro5==1 && *tabuleiro3==0 || *tabuleiro4==-1 && *tabuleiro5==-1 && *tabuleiro3==0)
-   {
-       if(*turnomaquina==1)
-           *tabuleiro3=1;
-       else
-           *tabuleiro3=-1;
-       marquei=1;
-   }
-   //6 e 7
-   if(*tabuleiro6==1 && *tabuleiro7==1 && *tabuleiro8==0 || *tabuleiro6==-1 && *tabuleiro7==-1 && *tabuleiro8==0)
-   {
-       if(*turnomaquina==1)
-           *tabuleiro8=1;
-       else
-           *tabuleiro8=-1;
-       marquei=1;
-   }
-   //6 e 8
-   if(*tabuleiro6==1 && *tabuleiro8==1 && *tabuleiro7==0 || *tabuleiro6==-1 && *tabuleiro8==-1 && *tabuleiro7==0)
-   {
-       if(*turnomaquina==1)
-           *tabuleiro7=1;
-       else
-           *tabuleiro7=-1;
-       marquei=1;
-   }
-   //7 e 8
-   if(*tabuleiro7==1 && *tabuleiro8==1 && *tabuleiro6==0 || *tabuleiro7==-1 && *tabuleiro8==-1 && *tabuleiro6==0)
-   {
-       if(*turnomaquina==1)
-           *tabuleiro6=1;
-       else
-           *tabuleiro6=-1;
-       marquei=1;
-   }
-   //0 e 6
-   if(*tabuleiro0==1 && *tabuleiro6==1 && *tabuleiro3==0 || *tabuleiro0==-1 && *tabuleiro6==-1 && *tabuleiro3==0)
-   {
-       if(*turnomaquina==1)
-           *tabuleiro3=1;
-       else
-           *tabuleiro3=-1;
-       marquei=1;
-   }
-   //3 e 6
-   if(*tabuleiro3==1 && *tabuleiro6==1 && *tabuleiro0==0 || *tabuleiro3==-1 && *tabuleiro6==-1 && *tabuleiro0==0)
-   {
-       if(*turnomaquina==1)
-           *tabuleiro0=1;
-       else
-           *tabuleiro0=-1;
-       marquei=1;
-   }
-   //1 e 4
-   if(*tabuleiro1==1 && *tabuleiro4==1 && *tabuleiro7==0 || *tabuleiro1==-1 && *tabuleiro4==-1 && *tabuleiro7==0)
-   {
-       if(*turnomaquina==1)
-           *tabuleiro7=1;
-       else
-           *tabuleiro7=-1;
-       marquei=1;
-   }
-   //1 e 7
-   if(*tabuleiro1==1 && *tabuleiro7==1 && *tabuleiro4==0 || *tabuleiro1==-1 && *tabuleiro7==-1 && *tabuleiro4==0)
-   {
-       if(*turnomaquina==1)
-           *tabuleiro4=1;
-       else
-           *tabuleiro4=-1;
-       marquei=1;
-   }
-   //4 e 7
-   if(*tabuleiro4==1 && *tabuleiro7==1 && *tabuleiro1==0 || *tabuleiro4==-1 && *tabuleiro7==-1 && *tabuleiro1==0)
-   {
-       if(*turnomaquina==1)
-           *tabuleiro1=1;
-       else
-           *tabuleiro1=-1;
-       marquei=1;
-   }
-   //2 e 5
-   if(*tabuleiro2==1 && *tabuleiro5==1 && *tabuleiro8==0 || *tabuleiro2==-1 && *tabuleiro5==-1 && *tabuleiro8==0)
-   {
-       if(*turnomaquina==1)
-           *tabuleiro8=1;
-       else
-           *tabuleiro8=-1;
-       marquei=1;
-   }
-   //2 e 8
-   if(*tabuleiro2==1 && *tabuleiro8==1 && *tabuleiro5==0 || *tabuleiro2==-1 && *tabuleiro8==-1 && *tabuleiro5==0)
-   {
-       if(*turnomaquina==1)
-           *tabuleiro5=1;
-       else
-           *tabuleiro5=-1;
-       marquei=1;
-   }
-   //5 e 8
-   if(*tabuleiro5==1 && *tabuleiro8==1 && *tabuleiro2==0 || *tabuleiro5==-1 && *tabuleiro8==-1 && *tabuleiro2==0)
-   {
-       if(*turnomaquina==1)
-           *tabuleiro2=1;
-       else
-           *tabuleiro2=-1;
-       marquei=1;
-   }
-   //0 e 8(diagonal)
-   if(*tabuleiro0==1 && *tabuleiro8==1 && *tabuleiro4==0 || *tabuleiro0==-1 && *tabuleiro8==-1 && *tabuleiro4==0)
-   {
-       if(*turnomaquina==1)
-           *tabuleiro4=1;
-       else
-           *tabuleiro4=-1;
-       marquei=1;
-   }
-   //4 e 8(diagonal)
-   if(*tabuleiro4==1 && *tabuleiro8==1 && *tabuleiro0==0 || *tabuleiro4==-1 && *tabuleiro8==-1 && *tabuleiro0==0)
-   {
-       if(*turnomaquina=1)
-           *tabuleiro0=1;
-       else
-           *tabuleiro0=-1;
-       marquei=1;
-   }
-   //2 e 4(diagonal)
-   if(*tabuleiro2==1 && *tabuleiro4==1 && *tabuleiro6==0 || *tabuleiro2==-1 && *tabuleiro4==-1 && *tabuleiro6==0)
-   {
-       if(*turnomaquina=1)
-           *tabuleiro6=1;
-       else
-           *tabuleiro6=-1;
-       marquei=1;
-   }
-   //2 e 6(diagonal)
-   if(*tabuleiro2==1 && *tabuleiro6==1 && *tabuleiro4==0 || *tabuleiro2==-1 && *tabuleiro6==-1 && *tabuleiro4==0)
-   {
-       if(*turnomaquina=1)
-           *tabuleiro4=1;
-       else
-           *tabuleiro4=-1;
-       marquei=1;
-   }
-   //4 e 6(diagonal)
-   if(*tabuleiro4==1 && *tabuleiro6==1 && *tabuleiro2==0 || *tabuleiro4==-1 && *tabuleiro6==-1 && *tabuleiro2==0)
-   {
-       if(*turnomaquina=1)
-           *tabuleiro2=1;
-       else
-           *tabuleiro2=-1;
-       marquei=1;
-   }
-   srand(time(NULL));
-   jogadamedia=rand()%MAXCASAS;
+        //0 e 1
+        if(*tabuleiro0==1 && *tabuleiro1==1 && *tabuleiro2==0 || *tabuleiro0==-1 && *tabuleiro1==-1 && *tabuleiro2==0)
+        {
+            if(*turnomaquina==1)
+                *tabuleiro2=1;
+            else
+                *tabuleiro2=-1;
+            marquei=marquei+1;
+        }
+        //0 e 2
+        if(*tabuleiro0==1 && *tabuleiro2==1 && *tabuleiro1==0 || *tabuleiro0==-1 && *tabuleiro2==-1 && *tabuleiro1==0)
+        {
+            if(*turnomaquina==1)
+                *tabuleiro1=1;
+            else
+                *tabuleiro1=-1;
+            marquei=marquei+1;
+        }  
+        //0 e 3
+        if(*tabuleiro0==1 && *tabuleiro3==1 && *tabuleiro6==0 || *tabuleiro0==-1 && *tabuleiro3==-1 && *tabuleiro6==0)
+        {
+            if(*turnomaquina==1)
+                *tabuleiro6=1;
+            else
+                *tabuleiro6=-1;
+            marquei=marquei+1;
+        }
+        //1 e 2
+        if(*tabuleiro1==1 && *tabuleiro2==1 && tabuleiro0==0 || *tabuleiro1==-1 && *tabuleiro2==-1 && *tabuleiro0==0)
+        {
+            if(*turnomaquina==1)
+                *tabuleiro0=1;
+            else
+                *tabuleiro0=-1;
+            marquei=marquei+1;
+        }
+        //0 e 4 (diagonal)
+        if(*tabuleiro0==1 && *tabuleiro4==1 && *tabuleiro8==0 || *tabuleiro0==-1 && *tabuleiro4==-1 && *tabuleiro8==0)
+        {
+            if(*turnomaquina==1)
+                *tabuleiro8=1;
+            else
+                *tabuleiro8=-1;
+            marquei=marquei+1;
+        }
+        //3 e 4
+        if(*tabuleiro3==1 && *tabuleiro4==1 && *tabuleiro5==0 || *tabuleiro3==-1 && *tabuleiro4==-1 && *tabuleiro5==0)
+        {
+            if(*turnomaquina==1)
+                *tabuleiro5=1;
+            else
+                *tabuleiro5=-1;
+            marquei=marquei+1;
+        }
+        //3 e 5
+        if(*tabuleiro3==1 && *tabuleiro5==1 && *tabuleiro4==0 || *tabuleiro3==-1 && *tabuleiro5==-1 && *tabuleiro4==0)
+        {
+            if(*turnomaquina==1)
+                *tabuleiro4=1;
+            else
+                *tabuleiro4=-1;
+            marquei=marquei+1;
+        }
+        //4 e 5
+        if(*tabuleiro4==1 && *tabuleiro5==1 && *tabuleiro3==0 || *tabuleiro4==-1 && *tabuleiro5==-1 && *tabuleiro3==0)
+        {
+            if(*turnomaquina==1)
+                *tabuleiro3=1;
+            else
+                *tabuleiro3=-1;
+            marquei=marquei+1;
+        }
+        //6 e 7
+        if(*tabuleiro6==1 && *tabuleiro7==1 && *tabuleiro8==0 || *tabuleiro6==-1 && *tabuleiro7==-1 && *tabuleiro8==0)
+        {
+            if(*turnomaquina==1)
+                *tabuleiro8=1;
+            else
+                *tabuleiro8=-1;
+            marquei=marquei+1;
+        }
+        //6 e 8
+        if(*tabuleiro6==1 && *tabuleiro8==1 && *tabuleiro7==0 || *tabuleiro6==-1 && *tabuleiro8==-1 && *tabuleiro7==0)
+        {
+            if(*turnomaquina==1)
+                *tabuleiro7=1;
+            else
+                *tabuleiro7=-1;
+            marquei=marquei+1;
+        }
+        //7 e 8
+        if(*tabuleiro7==1 && *tabuleiro8==1 && *tabuleiro6==0 || *tabuleiro7==-1 && *tabuleiro8==-1 && *tabuleiro6==0)
+        {
+            if(*turnomaquina==1)
+                *tabuleiro6=1;
+            else
+                *tabuleiro6=-1;
+            marquei=marquei+1;
+        }
+        //0 e 6
+        if(*tabuleiro0==1 && *tabuleiro6==1 && *tabuleiro3==0 || *tabuleiro0==-1 && *tabuleiro6==-1 && *tabuleiro3==0)
+        {
+            if(*turnomaquina==1)
+                *tabuleiro3=1;
+            else
+                *tabuleiro3=-1;
+            marquei=marquei+1;
+        }
+        //3 e 6
+        if(*tabuleiro3==1 && *tabuleiro6==1 && *tabuleiro0==0 || *tabuleiro3==-1 && *tabuleiro6==-1 && *tabuleiro0==0)
+        {
+            if(*turnomaquina==1)
+                *tabuleiro0=1;
+            else
+                *tabuleiro0=-1;
+            marquei=marquei+1;
+        }
+        //1 e 4
+        if(*tabuleiro1==1 && *tabuleiro4==1 && *tabuleiro7==0 || *tabuleiro1==-1 && *tabuleiro4==-1 && *tabuleiro7==0)
+        {
+            if(*turnomaquina==1)
+                *tabuleiro7=1;
+            else
+                *tabuleiro7=-1;
+            marquei=marquei+1;
+        }
+        //1 e 7
+        if(*tabuleiro1==1 && *tabuleiro7==1 && *tabuleiro4==0 || *tabuleiro1==-1 && *tabuleiro7==-1 && *tabuleiro4==0)
+        {
+            if(*turnomaquina==1)
+                *tabuleiro4=1;
+            else
+                *tabuleiro4=-1;
+            marquei=marquei+1;
+        }
+        //4 e 7
+        if(*tabuleiro4==1 && *tabuleiro7==1 && *tabuleiro1==0 || *tabuleiro4==-1 && *tabuleiro7==-1 && *tabuleiro1==0)
+        {
+            if(*turnomaquina==1)
+                *tabuleiro1=1;
+            else
+                *tabuleiro1=-1;
+            marquei=marquei+1;
+        }
+        //2 e 5
+        if(*tabuleiro2==1 && *tabuleiro5==1 && *tabuleiro8==0 || *tabuleiro2==-1 && *tabuleiro5==-1 && *tabuleiro8==0)
+        {
+            if(*turnomaquina==1)
+                *tabuleiro8=1;
+            else
+                *tabuleiro8=-1;
+            marquei=marquei+1;
+        }
+        //2 e 8
+        if(*tabuleiro2==1 && *tabuleiro8==1 && *tabuleiro5==0 || *tabuleiro2==-1 && *tabuleiro8==-1 && *tabuleiro5==0)
+        {
+            if(*turnomaquina==1)
+                *tabuleiro5=1;
+            else
+                *tabuleiro5=-1;
+            marquei=marquei+1;
+        }
+        //5 e 8
+        if(*tabuleiro5==1 && *tabuleiro8==1 && *tabuleiro2==0 || *tabuleiro5==-1 && *tabuleiro8==-1 && *tabuleiro2==0)
+        {
+            if(*turnomaquina==1)
+                *tabuleiro2=1;
+            else
+                *tabuleiro2=-1;
+            marquei=marquei+1;
+        }
+        //0 e 8(diagonal)
+        if(*tabuleiro0==1 && *tabuleiro8==1 && *tabuleiro4==0 || *tabuleiro0==-1 && *tabuleiro8==-1 && *tabuleiro4==0)
+        {
+            if(*turnomaquina==1)
+                *tabuleiro4=1;
+            else
+                *tabuleiro4=-1;
+            marquei=marquei+1;
+        }
+        //4 e 8(diagonal)
+        if(*tabuleiro4==1 && *tabuleiro8==1 && *tabuleiro0==0 || *tabuleiro4==-1 && *tabuleiro8==-1 && *tabuleiro0==0)
+        {
+            if(*turnomaquina=1)
+                *tabuleiro0=1;
+            else
+                *tabuleiro0=-1;
+            marquei=marquei+1;
+        }
+        //2 e 4(diagonal)
+        if(*tabuleiro2==1 && *tabuleiro4==1 && *tabuleiro6==0 || *tabuleiro2==-1 && *tabuleiro4==-1 && *tabuleiro6==0)
+        {
+            if(*turnomaquina=1)
+                *tabuleiro6=1;
+            else
+                *tabuleiro6=-1;
+            marquei=marquei+1;
+        }
+        //2 e 6(diagonal)
+        if(*tabuleiro2==1 && *tabuleiro6==1 && *tabuleiro4==0 || *tabuleiro2==-1 && *tabuleiro6==-1 && *tabuleiro4==0)
+        {
+            if(*turnomaquina=1)
+                *tabuleiro4=1;
+            else
+                *tabuleiro4=-1;
+            marquei=marquei+1;
+        }
+        //4 e 6(diagonal)
+        if(*tabuleiro4==1 && *tabuleiro6==1 && *tabuleiro2==0 || *tabuleiro4==-1 && *tabuleiro6==-1 && *tabuleiro2==0)
+        {
+            if(*turnomaquina=1)
+                *tabuleiro2=1;
+            else
+                *tabuleiro2=-1;
+            marquei=marquei+1;
+        }
+        srand(time(NULL));
+        jogadamedia=rand()%MAXCASAS;
 
-   if(jogadamedia==0 && *tabuleiro0==0)
-   {
-       if(*turnomaquina==1)
-           *tabuleiro0=*tabuleiro0+1;
-       else
-           *tabuleiro0=*tabuleiro0-1;
-       marquei=marquei+1;
-   }
-   if(jogadamedia==1 && *tabuleiro1==0)
-   {
-       if(*turnomaquina==1)
-           *tabuleiro1=*tabuleiro1+1;
-       else
-           *tabuleiro1=*tabuleiro1-1;
-       marquei=marquei+1;
-   }
-   if(jogadamedia==2 && *tabuleiro2==0)
-   {
-       if(*turnomaquina==1)
-           *tabuleiro2=*tabuleiro2+1;
-       else
-           *tabuleiro2=*tabuleiro2-1;
-       marquei=marquei+1;
-   }
-   if(jogadamedia==3 && *tabuleiro3==0)
-   {
-       if(*turnomaquina==1)
-           *tabuleiro3=*tabuleiro3+1;
-       else
-           *tabuleiro3=*tabuleiro3-1;
-       marquei=marquei+1;
-   }
+        if(jogadamedia==0 && *tabuleiro0==0)
+        {
+            if(*turnomaquina==1)
+                *tabuleiro0=*tabuleiro0+1;
+            else
+                *tabuleiro0=*tabuleiro0-1;
+            marquei=marquei+1;
+        }
+        if(jogadamedia==1 && *tabuleiro1==0)
+        {
+            if(*turnomaquina==1)
+                *tabuleiro1=*tabuleiro1+1;
+            else
+                *tabuleiro1=*tabuleiro1-1;
+            marquei=marquei+1;
+        }
+        if(jogadamedia==2 && *tabuleiro2==0)
+        {
+            if(*turnomaquina==1)
+                *tabuleiro2=*tabuleiro2+1;
+            else
+                *tabuleiro2=*tabuleiro2-1;
+            marquei=marquei+1;
+        }
+        if(jogadamedia==3 && *tabuleiro3==0)
+        {
+            if(*turnomaquina==1)
+                *tabuleiro3=*tabuleiro3+1;
+            else
+                *tabuleiro3=*tabuleiro3-1;
+            marquei=marquei+1;
+        }
 
-   if(jogadamedia==4 && *tabuleiro4==0)
-   {
-       if(*turnomaquina==1)
-           *tabuleiro4=*tabuleiro4+1;
-       else
-           *tabuleiro4=*tabuleiro4-1;
-       marquei=marquei+1;
-   }
+        if(jogadamedia==4 && *tabuleiro4==0)
+        {
+            if(*turnomaquina==1)
+                *tabuleiro4=*tabuleiro4+1;
+            else
+                *tabuleiro4=*tabuleiro4-1;
+            marquei=marquei+1;
+        }
 
-   if(jogadamedia==5 && *tabuleiro5==0)
-   {
-       if(*turnomaquina==1)
-           *tabuleiro5=*tabuleiro5+1;
-       else
-           *tabuleiro5=*tabuleiro5-1;
-       marquei=marquei+1;
-   }
+        if(jogadamedia==5 && *tabuleiro5==0)
+        {
+            if(*turnomaquina==1)
+                *tabuleiro5=*tabuleiro5+1;
+            else
+                *tabuleiro5=*tabuleiro5-1;
+            marquei=marquei+1;
+        }
 
-   if(jogadamedia==6 && *tabuleiro6==0)
-   {
-       if(*turnomaquina==1)
-           *tabuleiro6=*tabuleiro6+1;
-       else
-           *tabuleiro6=*tabuleiro6-1;
-       marquei=marquei+1;
-   }
+        if(jogadamedia==6 && *tabuleiro6==0)
+        {
+            if(*turnomaquina==1)
+                *tabuleiro6=*tabuleiro6+1;
+            else
+                *tabuleiro6=*tabuleiro6-1;
+            marquei=marquei+1;
+        }
 
-   if(jogadamedia==7 && tabuleiro7==0)
-   {
-       if(*turnomaquina==1)
-           *tabuleiro7=*tabuleiro7+1;
-       else
-           *tabuleiro7=*tabuleiro7-1;
-       marquei=marquei+1;
-   }
-   if(jogadamedia==8 && *tabuleiro8==0)
-   {
-       if(*turnomaquina==1)
-           *tabuleiro8=*tabuleiro8+1;
-       else
-           *tabuleiro8=*tabuleiro8-1;
-       marquei=marquei+1;
-   }
+        if(jogadamedia==7 && tabuleiro7==0)
+        {
+            if(*turnomaquina==1)
+                *tabuleiro7=*tabuleiro7+1;
+            else
+                *tabuleiro7=*tabuleiro7-1;
+            marquei=marquei+1;
+        }
+        if(jogadamedia==8 && *tabuleiro8==0)
+        {
+            if(*turnomaquina==1)
+                *tabuleiro8=*tabuleiro8+1;
+            else
+                *tabuleiro8=*tabuleiro8-1;
+            marquei=marquei+1;
+        }
 
-}
-if(*mododejogo==2)
-    if(*turnomaquina==1)
-    *turnomaquina=-1;
-    else
-    *turnomaquina=1;
+    }
+    if(*mododejogo==2)
+        if(*turnomaquina==1)
+            *turnomaquina=-1;
+        else
+            *turnomaquina=1;
 }
 
 
@@ -630,7 +630,7 @@ void fim(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,int *ta
 }
 
 void tabuleiro(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,int *tabuleiro4,int *tabuleiro5,int *tabuleiro6,int *tabuleiro7,int *tabuleiro8) 
-//funcao para imprimir as jogadas no tabuleiro
+    //funcao para imprimir as jogadas no tabuleiro
 {
     PRINTGRAF_ON ;
     printf("\n\n\n");
