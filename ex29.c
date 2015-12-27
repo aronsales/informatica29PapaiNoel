@@ -330,6 +330,14 @@ void nivelmedio(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
            *tabuleiro6=-1;
        marquei=1;
    }
+   if(*tabuleiro0==1 && *tabuleiro6==1 && *tabuleiro3==0 || *tabuleiro0==-1 && *tabuleiro6==-1 && *tabuleiro3==0)
+   {
+       if(*turnomaquina==1)
+           *tabuleiro3=1;
+       else
+           tabuleiro3=-1;
+       marquei=1;
+   }
 
 
 void fim(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,int *tabuleiro4,int *tabuleiro5,int *tabuleiro6,int *tabuleiro7,int *tabuleiro8,int *vencedor)
