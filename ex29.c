@@ -241,7 +241,7 @@ while(marquei==0)
         if(*turnomaquina==1)
             *tabuleiro2=1;
         else
-            tabuleiro2=-1;
+            *tabuleiro2=-1;
         marquei=1;
     }
     //0 e 2
@@ -250,7 +250,7 @@ while(marquei==0)
         if(*turnomaquina==1)
             *tabuleiro1=1;
         else
-            tabuleiro1=-1;
+            *tabuleiro1=-1;
         marquei=1;
     }  
     //0 e 3
@@ -259,7 +259,7 @@ while(marquei==0)
         if(*turnomaquina==1)
             *tabuleiro6=1;
         else
-            tabuleiro6=-1;
+            *tabuleiro6=-1;
         marquei=1;
     }
     //1 e 2
@@ -268,7 +268,7 @@ while(marquei==0)
         if(*turnomaquina==1)
             *tabuleiro0=1;
         else
-            tabuleiro0=-1;
+            *tabuleiro0=-1;
         marquei=1;
     }
     //0 e 4 (diagonal)
@@ -277,7 +277,7 @@ while(marquei==0)
         if(*turnomaquina==1)
             *tabuleiro8=1;
         else
-            tabuleiro8=-1;
+            *tabuleiro8=-1;
         marquei=1;
     }
     //3 e 4
@@ -286,7 +286,7 @@ while(marquei==0)
         if(*turnomaquina==1)
             *tabuleiro5=1;
         else
-            tabuleiro5=-1;
+            *tabuleiro5=-1;
         marquei=1;
     }
     //3 e 5
@@ -295,7 +295,7 @@ while(marquei==0)
         if(*turnomaquina==1)
             *tabuleiro4=1;
         else
-            tabuleiro4=-1;
+            *tabuleiro4=-1;
         marquei=1;
     }
     //4 e 5
@@ -304,7 +304,7 @@ while(marquei==0)
        if(*turnomaquina==1)
            *tabuleiro3=1;
        else
-           tabuleiro3=-1;
+           *tabuleiro3=-1;
        marquei=1;
    }
    //6 e 7
@@ -340,7 +340,7 @@ while(marquei==0)
        if(*turnomaquina==1)
            *tabuleiro3=1;
        else
-           tabuleiro3=-1;
+           *tabuleiro3=-1;
        marquei=1;
    }
    //3 e 6
@@ -349,7 +349,7 @@ while(marquei==0)
        if(*turnomaquina==1)
            *tabuleiro0=1;
        else
-           tabuleiro0=-1;
+           *tabuleiro0=-1;
        marquei=1;
    }
    //1 e 4
@@ -358,7 +358,7 @@ while(marquei==0)
        if(*turnomaquina==1)
            *tabuleiro7=1;
        else
-           tabuleiro7=-1;
+           *tabuleiro7=-1;
        marquei=1;
    }
    //1 e 7
@@ -367,7 +367,7 @@ while(marquei==0)
        if(*turnomaquina==1)
            *tabuleiro4=1;
        else
-           tabuleiro4=-1;
+           *tabuleiro4=-1;
        marquei=1;
    }
    //4 e 7
@@ -376,7 +376,7 @@ while(marquei==0)
        if(*turnomaquina==1)
            *tabuleiro1=1;
        else
-           tabuleiro1=-1;
+           *tabuleiro1=-1;
        marquei=1;
    }
    //2 e 5
@@ -385,7 +385,7 @@ while(marquei==0)
        if(*turnomaquina==1)
            *tabuleiro8=1;
        else
-           tabuleiro8=-1;
+           *tabuleiro8=-1;
        marquei=1;
    }
    //2 e 8
@@ -394,7 +394,7 @@ while(marquei==0)
        if(*turnomaquina==1)
            *tabuleiro5=1;
        else
-           tabuleiro5=-1;
+           *tabuleiro5=-1;
        marquei=1;
    }
    //5 e 8
@@ -403,7 +403,7 @@ while(marquei==0)
        if(*turnomaquina==1)
            *tabuleiro2=1;
        else
-           tabuleiro2=-1;
+           *tabuleiro2=-1;
        marquei=1;
    }
    //0 e 8(diagonal)
@@ -412,7 +412,7 @@ while(marquei==0)
        if(*turnomaquina==1)
            *tabuleiro4=1;
        else
-           tabuleiro4=-1;
+           *tabuleiro4=-1;
        marquei=1;
    }
    //4 e 8(diagonal)
@@ -421,7 +421,7 @@ while(marquei==0)
        if(*turnomaquina=1)
            *tabuleiro0=1;
        else
-           tabuleiro0=-1;
+           *tabuleiro0=-1;
        marquei=1;
    }
    //2 e 4(diagonal)
@@ -430,7 +430,7 @@ while(marquei==0)
        if(*turnomaquina=1)
            *tabuleiro6=1;
        else
-           tabuleiro6=-1;
+           *tabuleiro6=-1;
        marquei=1;
    }
    //2 e 6(diagonal)
@@ -439,7 +439,7 @@ while(marquei==0)
        if(*turnomaquina=1)
            *tabuleiro4=1;
        else
-           tabuleiro4=-1;
+           *tabuleiro4=-1;
        marquei=1;
    }
    //4 e 6(diagonal)
@@ -448,7 +448,7 @@ while(marquei==0)
        if(*turnomaquina=1)
            *tabuleiro2=1;
        else
-           tabuleiro2=-1;
+           *tabuleiro2=-1;
        marquei=1;
    }
    srand(time(NULL));
