@@ -119,28 +119,36 @@ void humanojoga(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
     }
 
     if(jogada==5 && *tabuleiro5==0)
+    {
         if(*turnojogador==1)
             *tabuleiro5=*tabuleiro5+1;
         else
             *tabuleiro5=*tabuleiro5-1;
+    }
 
     if(jogada==6 && *tabuleiro6==0)
+    {
         if(*turnojogador==1)
             *tabuleiro6=*tabuleiro6+1;
         else
             *tabuleiro6=*tabuleiro6-1;
+    }
 
     if(jogada==7 && *tabuleiro7==0)
+    {
         if(*turnojogador==1)
             *tabuleiro7=*tabuleiro7+1;
         else
             *tabuleiro7=*tabuleiro7-1;
+    }
 
     if(jogada==8 && *tabuleiro8==0)
+    {
         if(*turnojogador==1)
             *tabuleiro8=*tabuleiro8+1;
         else
             *tabuleiro8=*tabuleiro8-1;
+    }
 
     if(*mododejogo==1)
         if(*turnojogador==1)
