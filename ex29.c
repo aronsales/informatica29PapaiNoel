@@ -2,6 +2,8 @@
  * Autores:
  * -Aron Sales de Melo de Medeiros Monteiro
  * -Guido de Lyra Ferrario
+ *
+ *Codigo protegido pela Licensa GNU2.0, para mais informacoes acessar o arquivo LICENSE no repositorio do github
  **/
 
 #include <stdio.h>
