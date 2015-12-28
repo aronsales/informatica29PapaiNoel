@@ -657,7 +657,7 @@ void niveldificil(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro
             marquei=marquei+1;
         }
         //0 e 6
-        if(*tabuleiro0==1 && *tabuleiro6==1 && *tabuleiro3==0 && marquei==0 || *tabuleiro0==-1 && *tabuleiro6==-1 && *tabuleiro3==0 && marquei==0)
+        if((*tabuleiro0==1 && *tabuleiro6==1 && *tabuleiro3==0 && marquei==0) || (*tabuleiro0==-1 && *tabuleiro6==-1 && *tabuleiro3==0 && marquei==0))
         {
             if(*turnomaquina==1)
                 *tabuleiro3=1;
@@ -666,7 +666,7 @@ void niveldificil(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro
             marquei=marquei+1;
         }
         //3 e 6
-        if(*tabuleiro3==1 && *tabuleiro6==1 && *tabuleiro0==0 && marquei==0 || *tabuleiro3==-1 && *tabuleiro6==-1 && *tabuleiro0==0 && marquei==0)
+        if((*tabuleiro3==1 && *tabuleiro6==1 && *tabuleiro0==0 && marquei==0) || (*tabuleiro3==-1 && *tabuleiro6==-1 && *tabuleiro0==0 && marquei==0))
         {
             if(*turnomaquina==1)
                 *tabuleiro0=1;
@@ -675,7 +675,7 @@ void niveldificil(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro
             marquei=marquei+1;
         }
         //1 e 4
-        if(*tabuleiro1==1 && *tabuleiro4==1 && *tabuleiro7==0 && marquei==0 || *tabuleiro1==-1 && *tabuleiro4==-1 && *tabuleiro7==0 && marquei==0)
+        if((*tabuleiro1==1 && *tabuleiro4==1 && *tabuleiro7==0 && marquei==0) || (*tabuleiro1==-1 && *tabuleiro4==-1 && *tabuleiro7==0 && marquei==0))
         {
             if(*turnomaquina==1)
                 *tabuleiro7=1;
