@@ -151,10 +151,12 @@ void humanojoga(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
     }
 
     if(*mododejogo==1)
+    {
         if(*turnojogador==1)
             *turnojogador=*turnojogador-2;
         else
             *turnojogador=*turnojogador+2;
+    }
 
 }
 
