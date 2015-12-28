@@ -805,6 +805,23 @@ void niveldificil(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro
                 *tabuleiro8=-1;
             marquei=1;
         }
+        if(*tabuleiro1==0 && marquei==0)
+        {
+            if(*turnomaquina==1)
+                *tabuleiro1=1;
+            else
+                *tabuleiro1=-1;
+            marquei=1;
+        }
+
+        if(*tabuleiro7==0 && marquei==0)
+        {
+            if(*turnomaquina==1)
+                *tabuleiro7=1;
+            else
+                *tabuleiro7=-1;
+            marquei=1;
+        }
     if(*mododejogo==2)
         if(*turnomaquina==1)
             *turnomaquina=-1;
