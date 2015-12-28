@@ -418,7 +418,7 @@ void nivelmedio(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
         //4 e 8(diagonal)
         if(*tabuleiro4==1 && *tabuleiro8==1 && *tabuleiro0==0 && marquei==0 || *tabuleiro4==-1 && *tabuleiro8==-1 && *tabuleiro0==0 && marquei==0)
         {
-            if(*turnomaquina=1)
+            if(*turnomaquina==1)
                 *tabuleiro0=1;
             else
                 *tabuleiro0=-1;
@@ -427,7 +427,7 @@ void nivelmedio(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
         //2 e 4(diagonal)
         if(*tabuleiro2==1 && *tabuleiro4==1 && *tabuleiro6==0 && marquei==0 || *tabuleiro2==-1 && *tabuleiro4==-1 && *tabuleiro6==0 && marquei==0)
         {
-            if(*turnomaquina=1)
+            if(*turnomaquina==1)
                 *tabuleiro6=1;
             else
                 *tabuleiro6=-1;
@@ -436,7 +436,7 @@ void nivelmedio(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
         //2 e 6(diagonal)
         if(*tabuleiro2==1 && *tabuleiro6==1 && *tabuleiro4==0 && marquei==0 || *tabuleiro2==-1 && *tabuleiro6==-1 && *tabuleiro4==0 && marquei==0)
         {
-            if(*turnomaquina=1)
+            if(*turnomaquina==1)
                 *tabuleiro4=1;
             else
                 *tabuleiro4=-1;
@@ -445,7 +445,7 @@ void nivelmedio(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
         //4 e 6(diagonal)
         if(*tabuleiro4==1 && *tabuleiro6==1 && *tabuleiro2==0 && marquei==0 || *tabuleiro4==-1 && *tabuleiro6==-1 && *tabuleiro2==0 && marquei==0)
         {
-            if(*turnomaquina=1)
+            if(*turnomaquina==1)
                 *tabuleiro2=1;
             else
                 *tabuleiro2=-1;
@@ -537,6 +537,11 @@ void nivelmedio(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
             *turnomaquina=-1;
         else
             *turnomaquina=1;
+    printf("\nTURNO %d",*turnomaquina);
+    printf("\ntab0 %d", *tabuleiro0);
+    printf("\ntab2 %d", *tabuleiro2);
+    printf("\ntab6 %d", *tabuleiro6);
+    printf("\ntab8 %d", *tabuleiro8);
 }
 
 
