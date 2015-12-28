@@ -767,84 +767,14 @@ void niveldificil(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro
                 *tabuleiro2=-1;
             marquei=marquei+1;
         }
-            srand(time(NULL));
-            jogadadificil=rand()%MAXCASAS;
 
-        if(jogadadificil==0 && *tabuleiro0==0 && marquei==0)
+        if(*tabuleiro4==0 && marquei==0)
         {
-            if(*turnomaquina==1)
-                *tabuleiro0=*tabuleiro0+1;
+            if(*jogadamaquina==1)
+                *tabuleiro4=1;
             else
-                *tabuleiro0=*tabuleiro0-1;
-            marquei=marquei+1;
-        }
-        if(jogadadificil==1 && *tabuleiro1==0 && marquei==0) 
-        {
-            if(*turnomaquina==1)
-                *tabuleiro1=*tabuleiro1+1;
-            else
-                *tabuleiro1=*tabuleiro1-1;
-            marquei=marquei+1;
-        }
-        if(jogadadificil==2 && *tabuleiro2==0 && marquei==0)
-        {
-            if(*turnomaquina==1)
-                *tabuleiro2=*tabuleiro2+1;
-            else
-                *tabuleiro2=*tabuleiro2-1;
-            marquei=marquei+1;
-        }
-        if(jogadadificil==3 && *tabuleiro3==0 && marquei==0)
-        {
-            if(*turnomaquina==1)
-                *tabuleiro3=*tabuleiro3+1;
-            else
-                *tabuleiro3=*tabuleiro3-1;
-            marquei=marquei+1;
-        }
-
-        if(jogadadificil==4 && *tabuleiro4==0 && marquei==0)
-        {
-            if(*turnomaquina==1)
-                *tabuleiro4=*tabuleiro4+1;
-            else
-                *tabuleiro4=*tabuleiro4-1;
-            marquei=marquei+1;
-        }
-
-        if(jogadadificil==5 && *tabuleiro5==0 && marquei==0)
-        {
-            if(*turnomaquina==1)
-                *tabuleiro5=*tabuleiro5+1;
-            else
-                *tabuleiro5=*tabuleiro5-1;
-            marquei=marquei+1;
-        }
-
-        if(jogadadificil==6 && *tabuleiro6==0 && marquei==0)
-        {
-            if(*turnomaquina==1)
-                *tabuleiro6=*tabuleiro6+1;
-            else
-                *tabuleiro6=*tabuleiro6-1;
-            marquei=marquei+1;
-        }
-
-        if(jogadadificil==7 && tabuleiro7==0 && marquei==0)
-        {
-            if(*turnomaquina==1)
-                *tabuleiro7=*tabuleiro7+1;
-            else
-                *tabuleiro7=*tabuleiro7-1;
-            marquei=marquei+1;
-        }
-        if(jogadadificil==8 && *tabuleiro8==0 && marquei==0)
-        {
-            if(*turnomaquina==1)
-                *tabuleiro8=*tabuleiro8+1;
-            else
-                *tabuleiro8=*tabuleiro8-1;
-            marquei=marquei+1;
+                *tabuleiro4=-1;
+            marquei=1;
         }
 
 
