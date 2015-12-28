@@ -861,10 +861,12 @@ void niveldificil(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro
             marquei=1;
         }
     if(*mododejogo==2)
+    {
         if(*turnomaquina==1)
             *turnomaquina=-1;
         else
             *turnomaquina=1;
+    }
     }
 }
 
