@@ -31,7 +31,7 @@ void inicializacao ()
     printf("\nO programa traz o tradicional Jogo da Velha!\n");
 }
 
-void menu (int *mododejogo,int *dificuldade)
+void menu (int *mododejogo,int *dificuldade,int *quemcomeca)
 {
     printf("\nHa tres modalidades disponiveis: \n");
     printf("Pressione:");
@@ -62,8 +62,8 @@ void menu (int *mododejogo,int *dificuldade)
     if(*mododejogo==3)
     {
         printf("\nQuem fara o primeiro movimento?\n");
-        printf("\nPressione 'h' para humano ou\n");
-        printf("'c' para computador");
+        printf("\nPressione\n'1' para humano ou\n");
+        printf("'2' para computador");
         scanf("%d", &*quemcomeca);
     }
 }
@@ -1072,7 +1072,7 @@ int main (void)
 
     setlocale(LC_ALL, "");
     inicializacao();
-    menu(&mododejogo, &dificuldade);
+    menu(&mododejogo, &dificuldade,&quemcomeca);
     if(mododejogo==1)
         while(vencedor==0)
         {
@@ -1101,7 +1101,7 @@ int main (void)
             fim(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&vencedor);
             niveldificil(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&turnomaquina,&mododejogo);
         }
-    if(mododejogo==3 && dificuldade==4)
+    if(mododejogo==3 && dificuldade==4 && quemcomeca==1)
         while(vencedor==0)
         {
             tabuleiro(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8);
@@ -1111,7 +1111,19 @@ int main (void)
             fim(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&vencedor);
             nivelfacil(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&turnomaquina,&mododejogo);
         }
-    if(mododejogo==3 && dificuldade==5)
+    if(mododejogo==3 && dificuldade==4 && quemcomeca==2)
+        while(vencedor==0)
+        {
+            turnomaquina=1;
+            turnojogador=-1;
+            tabuleiro(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8);
+            fim(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&vencedor);
+            nivelfacil(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&turnomaquina,&mododejogo);
+            tabuleiro(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8);
+            fim(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&vencedor);
+            humanojoga(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&turnojogador,&mododejogo);
+        }
+    if(mododejogo==3 && dificuldade==5 && quemcomeca==1)
         while(vencedor==0)
         {
             tabuleiro(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8);
@@ -1121,7 +1133,19 @@ int main (void)
             fim(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&vencedor);
             nivelmedio(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&turnomaquina,&mododejogo);
         }
-    if(mododejogo==3 && dificuldade==6)
+    if(mododejogo==3 && dificuldade==5 && quemcomeca==2)
+        while(vencedor==0)
+        {
+            turnomaquina=1;
+            turnojogador=-1;
+            tabuleiro(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8);
+            fim(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&vencedor);
+            nivelmedio(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&turnomaquina,&mododejogo);
+            tabuleiro(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8);
+            fim(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&vencedor);
+            humanojoga(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&turnojogador,&mododejogo);
+        }
+    if(mododejogo==3 && dificuldade==6 && quemcomeca==1)
         while(vencedor==0)
         {
             tabuleiro(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8);
@@ -1131,6 +1155,19 @@ int main (void)
             fim(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&vencedor);
             niveldificil(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&turnomaquina,&mododejogo);
         }
+    if(mododejogo==3 && dificuldade==6 && quemcomeca==2)
+        while(vencedor==0)
+        {
+            turnomaquina=1;
+            turnojogador=-1;
+            tabuleiro(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8);
+            fim(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&vencedor);
+            niveldificil(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&turnomaquina,&mododejogo);
+            tabuleiro(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8);
+            fim(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&vencedor);
+            humanojoga(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&turnojogador,&mododejogo);
+        }
+
     despedida();
 }
 
