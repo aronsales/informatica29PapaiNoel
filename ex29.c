@@ -956,6 +956,7 @@ void fim(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,int *ta
         *vencedor=-1;
         printf("\nO ganhou ! ! ! \n");
     }
+    //Se todas as casas estiverem preenchidas com algum valor, e ninguem for vencedor, entrará neste laço e decretará a partida como empate
     if(*tabuleiro0!=0 && *tabuleiro1!=0 && *tabuleiro2!=0 && *tabuleiro3!=0 && *tabuleiro4!=0 && *tabuleiro5!=0 && *tabuleiro6!=0 && *tabuleiro7!=0 && *tabuleiro8!=0 && *vencedor==0)
         printf("\nDeu Velha! ! ! Jogo empatou\n");
 
