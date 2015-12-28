@@ -27,13 +27,13 @@
 void inicializacao () //mensagens de inicio
 {
     printf("\nBem-vindo(a) ao programa informatica29PapaiNoel!!");
-    printf("\nPrograma criado por: \n Aron Sales de Melo de Medeiros Monteiro, e \n Guido de Lyra Ferrario.");
+    printf("\nPrograma criado por: \n-Aron Sales de Melo de Medeiros Monteiro, e \n-Guido de Lyra Ferrario.");
     printf("\nO programa traz o tradicional Jogo da Velha!\n");
 }
 
 void menu (int *mododejogo,int *dificuldade,int *quemcomeca) //menu
 {
-    printf("\nHa tres modalidades disponiveis: \n");
+    printf("\n-Ha tres modalidades disponiveis: \n");
     printf("Pressione:");
     printf("\n'1' se voce deseja um jogo para dois humanos.");
     printf("\n'2' se voce deseja ver uma partida simulada.");
@@ -41,41 +41,41 @@ void menu (int *mododejogo,int *dificuldade,int *quemcomeca) //menu
     scanf("%d", &*mododejogo);
     if(*mododejogo==2 || *mododejogo==3)
     {
-        printf("\n Por favor, informe em qual dificuldade voce deseja o desafio:");
-        printf("\n '4' - Nivel facil");
-        printf("\n '5' - Nivel medio");
-        printf("\n '6' - Nivel dificil\n");
+        printf("\n-Por favor, informe em qual dificuldade voce deseja o desafio:");
+        printf("\n'4' - Nivel facil");
+        printf("\n'5' - Nivel medio");
+        printf("\n'6' - Nivel dificil\n");
         scanf("%d", &*dificuldade);
     }
     if(*mododejogo==1 || *mododejogo==3)
     {
         printf("\n\nO usuario devera escolher em qual 'casa' ele jogara!");
-        printf("\n Exemplo de tabuleiro:\n");
-        printf("\n  0 | 1 | 2");
+        printf("\n-Exemplo de tabuleiro:\n");
+        printf("\n 0 | 1 | 2");
+        printf("\n---+---+---");
+        printf("\n 3 | 4 | 5");
         printf("\n ---+---+---");
-        printf("\n  3 | 4 | 5");
-        printf("\n ---+---+---");
-        printf("\n  6 | 7 | 8\n");
-        printf("\n Os numeros representam as opcoes de 'casas' para a execucao da jogada!\n\n");
-        printf("\n SE O JOGADOR PRESSIONAR UM NUMERO DE UMA CASA JA OCUPADA, PERDERA A VEZ!!\n");
+        printf("\n 6 | 7 | 8\n");
+        printf("\nOs numeros representam as opcoes de 'casas' para a execucao da jogada!\n\n");
+        printf("\nSE O JOGADOR PRESSIONAR UM NUMERO DE UMA CASA JA OCUPADA, PERDERA A VEZ!!\n");
     }
     if(*mododejogo==3)
     {
-        printf("\nQuem fara o primeiro movimento?\n");
+        printf("\n-Quem fara o primeiro movimento?\n");
         printf("\nPressione\n'1' para humano ou\n");
-        printf("'2' para computador\n");
+        printf("'2' para computador:\n");
         scanf("%d", &*quemcomeca);
     }
 }
 
 void humanojoga(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,int *tabuleiro4,int *tabuleiro5,int *tabuleiro6,int *tabuleiro7,int *tabuleiro8,int *turnojogador,int *mododejogo)
-    //jogada do humano
+    //Funcao da jogada do humano
 {
     int jogada;
 
     printf("\nEscolha a casa que voce quer jogar:\n");
     scanf("%d", &jogada);
-
+    //Recolherá a jogada do humano, e se a casa for válida, jogará
     if(jogada==0 && *tabuleiro0==0)
         if(*turnojogador==1)
             *tabuleiro0=*tabuleiro0+1;
@@ -139,14 +139,14 @@ void humanojoga(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
 }
 
 void nivelfacil(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,int *tabuleiro4,int *tabuleiro5,int *tabuleiro6,int *tabuleiro7,int *tabuleiro8,int *turnomaquina,int *mododejogo)
-    //nivel facil, jogada da maquina
+    //Nivel facil, jogada da maquina aleatorio
 {
     int marquei=0;
     int jogadafacil;
 
     while(marquei==0)
     {
-        srand(time(NULL)); //computador joga aleatoriamente, validando a jogada apenas se a casa estiver vazia
+        srand(time(NULL)); //Computador joga aleatoriamente,sorteando um valor para a variavel jogafacil, validando a jogada apenas se a casa estiver vazia
         jogadafacil=rand()%MAXCASAS;
 
         if(jogadafacil==0 && *tabuleiro0==0)
@@ -236,7 +236,7 @@ void nivelfacil(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
 
 }
 void nivelmedio(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,int *tabuleiro4,int *tabuleiro5,int *tabuleiro6,int *tabuleiro7,int *tabuleiro8,int *turnomaquina,int *mododejogo)
-    //evita a derrota ou conquista a vitoria se duas casas do mesmo simbolo estiverem juntas
+    //Funcao nivel medio, evita a derrota ou conquista a vitoria se duas casas do mesmo simbolo estiverem juntas
 {
     int marquei=0;
     int jogadamedia;
@@ -460,7 +460,8 @@ void nivelmedio(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
                 *tabuleiro2=-1;
             marquei=marquei+1;
         }
-            srand(time(NULL)); //se nao houver risco de derrota ou possibilidade de derrota no turno, o computador ira jogar em uma casa aleatoria que esta disponivel para jogada
+            srand(time(NULL)); 
+            //Se nao houver risco de derrota ou possibilidade de derrota no turno, o computador ira jogar em uma casa aleatoria que esta disponivel para jogada
             jogadamedia=rand()%MAXCASAS;
 
         if(jogadamedia==0 && *tabuleiro0==0 && marquei==0)
@@ -549,7 +550,7 @@ void nivelmedio(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
 
 
 void niveldificil(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,int *tabuleiro4,int *tabuleiro5,int *tabuleiro6,int *tabuleiro7,int *tabuleiro8,int *turnomaquina,int *mododejogo)
-    //mesmas qualidades do nivel medio, alem disso tem prioridade pelo centro e pelas diagonais, dificultando para o humano
+    //Mesmas qualidades do nivel medio, alem disso tem prioridade para jogar no centro e pelas diagonais, dificultando o jogo para o humano
 {
     int marquei=0;
     while(marquei==0)
@@ -780,7 +781,8 @@ void niveldificil(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro
             marquei=1;
         }
 
-        if(*tabuleiro0==0 && marquei==0) // se nao houver risco de derrota ou possibilidade de vitoria, e a casa central estiver ocupada, o computador devera jogar em uma das casas nas 'quinas'(0,2,6 e 8).
+        if(*tabuleiro0==0 && marquei==0) 
+            // Se nao houver risco de derrota ou possibilidade de vitoria, e a casa central estiver ocupada, o computador devera jogar em uma das casas nas 'quinas'(0,2,6 e 8) e se mesmo assim não tiver possibilidade de jogada, jogará na 1 e 7.
         {
             if(*turnomaquina==1)
                 *tabuleiro0=1;
@@ -842,13 +844,14 @@ void niveldificil(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro
 
 
 void fim(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,int *tabuleiro4,int *tabuleiro5,int *tabuleiro6,int *tabuleiro7,int *tabuleiro8,int *vencedor)
-    //funcao para calcular o vencedor da partida
+    //Funcao para calcular o vencedor da partida, de acordo com o valor das variaveis tabuleiro
 {
     if(*tabuleiro0==1 && *tabuleiro1==1 && *tabuleiro2==1)
     {
         *vencedor=1;
         printf("\nX ganhou ! ! ! \n");
     }
+    //Se as casas 0, 1 e 2 estiverem oculpadas com +1, o jogador X ganhou
     if(*tabuleiro3==1 && *tabuleiro4==1 && *tabuleiro5==1)
     {
         *vencedor=1;
@@ -884,12 +887,12 @@ void fim(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,int *ta
         *vencedor=1;
         printf("\nX ganhou ! ! ! \n");
     }
-
     if(*tabuleiro0==-1 && *tabuleiro1==-1 && *tabuleiro2==-1)
     {
         *vencedor=-1;
         printf("\nO ganhou ! ! ! \n");
     }
+    //Se 3 casas estiverem juntas, e com o valor de -1, decretará o 'O' como vencedor
     if(*tabuleiro3==-1 && *tabuleiro4==-1 && *tabuleiro5==-1)
     {
         *vencedor=-1;
@@ -931,11 +934,11 @@ void fim(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,int *ta
 }
 
 void tabuleiro(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,int *tabuleiro4,int *tabuleiro5,int *tabuleiro6,int *tabuleiro7,int *tabuleiro8) 
-    //funcao para imprimir as jogadas no tabuleiro
+    //Funcao para imprimir as jogadas no tabuleiro, de acordo com as variavéis
 {
     PRINTGRAF_ON ;
     printf("\n\n\n");
-
+    //Se a casa não for neutra(0), entrará no laço, onde dependendo do valor(1 ou -1) imprimirá X ou O
     if(*tabuleiro0!=0)
     {
         if(*tabuleiro0==1)
@@ -947,6 +950,7 @@ void tabuleiro(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,i
         printf(" ");
 
     printf("%lc",WVV);
+    //Colocação da primeira | no tabuleiro
 
     if(*tabuleiro1!=0)
     {
@@ -969,7 +973,8 @@ void tabuleiro(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,i
     }
     else
         printf(" ");
-
+    
+    //Impressão da primeira linha na horizontal _+_+_
     printf("\n");
     printf("%lc",WHH);
     printf("%lc",WVH);
@@ -1059,13 +1064,14 @@ void tabuleiro(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,i
     PRINTGRAF_OFF;
 }
 
-void despedida() //mensagem de despedida, aparece no fim do programa.
+void despedida() //Mensagem de despedida, aparece no fim do programa.
 {
     printf("\n\nObrigado por executar o informatica29PapaiNoel!! Boas festas!\n\n");
 }
 
 int main (void)
 {  
+    //Variaveis locais na main, que serão passadas por parametro(referencia)
     int tabuleiro0=0,tabuleiro1=0,tabuleiro2=0,tabuleiro3=0,tabuleiro4=0,tabuleiro5=0,tabuleiro6=0,tabuleiro7=0,tabuleiro8=0;
     int vencedor=0;
     int turnojogador=1;
@@ -1074,7 +1080,9 @@ int main (void)
 
     setlocale(LC_ALL, "");
     inicializacao();
+    //Recebimento das variaveis do menu
     menu(&mododejogo, &dificuldade,&quemcomeca);
+    //Se o modo de jogo for igual a '1'(2 humanos), entrará neste laço
     if(mododejogo==1)
         while(vencedor==0)
         {
@@ -1082,6 +1090,7 @@ int main (void)
             fim(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&vencedor);
             humanojoga(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&turnojogador,&mododejogo);
         }
+    //Se o modo de jogo for igual a '2'(2 computadores), estrará nestes laços de acordo com a dificuldade
     if(mododejogo==2 && dificuldade==4)
         while(vencedor==0)
         {
@@ -1103,6 +1112,7 @@ int main (void)
             fim(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&vencedor);
             niveldificil(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&turnomaquina,&mododejogo);
         }
+    //Se o modo de jogo for '3'(Humano X Pc), estrará nestes laços de acordo com a dificuldade, e de quem começará
     if(mododejogo==3 && dificuldade==4 && quemcomeca==1)
         while(vencedor==0)
         {
@@ -1169,7 +1179,7 @@ int main (void)
             fim(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&vencedor);
             humanojoga(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&turnojogador,&mododejogo);
         }
-
+    //Mensagem de despedida
     despedida();
 }
 
