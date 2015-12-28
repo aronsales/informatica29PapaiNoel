@@ -795,6 +795,15 @@ void niveldificil(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro
             marquei=1;
         }
 
+        if(*tabuleiro6==0 && marquei==0)
+        {
+            if(*jogadamaquina==1)
+                *tabuleiro6=1;
+            else
+                *tabuleiro6=-1;
+            marquei=1;
+        }
+
 
 void fim(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,int *tabuleiro4,int *tabuleiro5,int *tabuleiro6,int *tabuleiro7,int *tabuleiro8,int *vencedor)
     //funcao para calcular o vencedor da partida
