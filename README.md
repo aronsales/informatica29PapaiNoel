@@ -13,18 +13,21 @@ O jogo possui 3 modalidades:
 
 Sendo as duas ultimas divididas em tres niveis: 
 
-1- Facil
+1- Fácil
 
-2- Medio
+2- Médio
 
-3- Dificil
+3- Difícil
 
-No modo de jogo em que o Humano joga contra o Computador e possivel escolher quem fara o primeiro movimento.
+No modo de jogo em que o Humano joga contra o Computador é possivel escolher quem fará o primeiro movimento.
 
 #Autores:
 Aron Sales de Melo de Medeiros Monteiro
 
+id git: aronsales
+
 Guido de Lyra Ferrario
+
 id git: guidoferrario
 
 #Orientador:
