@@ -531,17 +531,11 @@ void nivelmedio(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
             marquei=marquei+1;
         }
     }
-    printf("%d",marquei);
     if(*mododejogo==2)
         if(*turnomaquina==1)
             *turnomaquina=-1;
         else
             *turnomaquina=1;
-    printf("\nTURNO %d",*turnomaquina);
-    printf("\ntab0 %d", *tabuleiro0);
-    printf("\ntab2 %d", *tabuleiro2);
-    printf("\ntab6 %d", *tabuleiro6);
-    printf("\ntab8 %d", *tabuleiro8);
 }
 
 
@@ -803,6 +797,22 @@ void niveldificil(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro
                 *tabuleiro6=-1;
             marquei=1;
         }
+
+        if(*tabuleiro8==0 && marquei==0)
+        {
+            if(*jogadamaquina==1)
+                *tabuleiro8=1;
+            else
+                *tabuleiro8=-1;
+            marquei=1;
+        }
+    if(*mododejogo==2)
+        if(*turnomaquina==1)
+            *turnomaquina=-1;
+        else
+            *turnomaquina=1;
+    }
+}
 
 
 void fim(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,int *tabuleiro4,int *tabuleiro5,int *tabuleiro6,int *tabuleiro7,int *tabuleiro8,int *vencedor)
