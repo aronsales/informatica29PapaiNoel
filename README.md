@@ -19,10 +19,13 @@ Sendo as duas ultimas divididas em tres niveis:
 
 3- Dificil
 
+No modo de jogo em que o Humano joga contra o Computador e possivel escolher quem fara o primeiro movimento.
+
 #Autores:
 Aron Sales de Melo de Medeiros Monteiro
 
 Guido de Lyra Ferrario
+id git: guidoferrario
 
 #Orientador:
 Prof. Dr. Ruben Carlo Benante
