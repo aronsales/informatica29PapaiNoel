@@ -542,7 +542,6 @@ void nivelmedio(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
 void niveldificil(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,int *tabuleiro4,int *tabuleiro5,int *tabuleiro6,int *tabuleiro7,int *tabuleiro8,int *turnomaquina,int *mododejogo)
 {
     int marquei=0;
-    int jogadadificil;
     while(marquei==0)
     {
         //0 e 1
@@ -764,7 +763,7 @@ void niveldificil(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro
 
         if(*tabuleiro4==0 && marquei==0)
         {
-            if(*jogadamaquina==1)
+            if(*turnomaquina==1)
                 *tabuleiro4=1;
             else
                 *tabuleiro4=-1;
@@ -773,7 +772,7 @@ void niveldificil(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro
 
         if(*tabuleiro0==0 && marquei==0)
         {
-            if(*jogadamaquina==1)
+            if(*turnomaquina==1)
                 *tabuleiro0=1;
             else
                 *tabuleiro0=-1;
@@ -782,7 +781,7 @@ void niveldificil(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro
 
         if(*tabuleiro2==0 && marquei==0)
         {
-            if(*jogadamaquina==1)
+            if(*turnomaquina==1)
                 *tabuleiro2=1;
             else
                 *tabuleiro2=-1;
@@ -791,7 +790,7 @@ void niveldificil(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro
 
         if(*tabuleiro6==0 && marquei==0)
         {
-            if(*jogadamaquina==1)
+            if(*turnomaquina==1)
                 *tabuleiro6=1;
             else
                 *tabuleiro6=-1;
@@ -800,7 +799,7 @@ void niveldificil(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro
 
         if(*tabuleiro8==0 && marquei==0)
         {
-            if(*jogadamaquina==1)
+            if(*turnomaquina==1)
                 *tabuleiro8=1;
             else
                 *tabuleiro8=-1;
@@ -1070,6 +1069,13 @@ int main (void)
             fim(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&vencedor);
             nivelmedio(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&turnomaquina,&mododejogo);
         }
+    if(mododejogo==2 && dificuldade==6)
+        while(vencedor==0)
+        {
+            tabuleiro(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8);
+            fim(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&vencedor);
+            niveldificil(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&turnomaquina,&mododejogo);
+        }
     if(mododejogo==3 && dificuldade==4)
         while(vencedor==0)
         {
@@ -1089,6 +1095,16 @@ int main (void)
             tabuleiro(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8);
             fim(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&vencedor);
             nivelmedio(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&turnomaquina,&mododejogo);
+        }
+    if(mododejogo==3 && dificuldade==6)
+        while(vencedor==0)
+        {
+            tabuleiro(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8);
+            fim(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&vencedor);
+            humanojoga(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&turnojogador,&mododejogo);
+            tabuleiro(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8);
+            fim(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&vencedor);
+            niveldificil(&tabuleiro0,&tabuleiro1,&tabuleiro2,&tabuleiro3,&tabuleiro4,&tabuleiro5,&tabuleiro6,&tabuleiro7,&tabuleiro8,&turnomaquina,&mododejogo);
         }
     despedida();
 }
