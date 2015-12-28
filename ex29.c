@@ -59,6 +59,13 @@ void menu (int *mododejogo,int *dificuldade)
         printf("\n Os numeros representam as opcoes de 'casa' para a execucao da jogada!\n\n");
         printf("\n SE O JOGADOR PRESSIONAR UM NUMERO DE UMA CASA JA OCULPADA, PERDERA' A VEZ!!\n");
     }
+    if(*mododejogo==3)
+    {
+        printf("\nQuem fara o primeiro movimento?\n");
+        printf("\nPressione 'h' para humano ou\n");
+        printf("'c' para computador");
+        scanf("%d", &*quemcomeca);
+    }
 }
 
 void humanojoga(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,int *tabuleiro4,int *tabuleiro5,int *tabuleiro6,int *tabuleiro7,int *tabuleiro8,int *turnojogador,int *mododejogo)
@@ -540,6 +547,7 @@ void nivelmedio(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
 
 
 void niveldificil(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,int *tabuleiro4,int *tabuleiro5,int *tabuleiro6,int *tabuleiro7,int *tabuleiro8,int *turnomaquina,int *mododejogo)
+    //mesmas qualidades do nivel medio, alem disso tem prioridade pelo centro e pelas diagonais, dificultando para o humano
 {
     int marquei=0;
     while(marquei==0)
@@ -1060,7 +1068,7 @@ int main (void)
     int vencedor=0;
     int turnojogador=1;
     int turnomaquina=-1;
-    int mododejogo, dificuldade;
+    int mododejogo, dificuldade, quemcomeca;
 
     setlocale(LC_ALL, "");
     inicializacao();
