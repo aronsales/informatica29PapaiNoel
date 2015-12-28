@@ -251,10 +251,12 @@ void nivelfacil(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
         }
     }
     if(*mododejogo==2)
+    {
         if(*turnomaquina==1)
             *turnomaquina=-1;
         else
             *turnomaquina=1;
+    }
 
 }
 void nivelmedio(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,int *tabuleiro4,int *tabuleiro5,int *tabuleiro6,int *tabuleiro7,int *tabuleiro8,int *turnomaquina,int *mododejogo)
