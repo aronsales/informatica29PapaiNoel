@@ -79,34 +79,44 @@ void humanojoga(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
     scanf("%d", &jogada);
     //Recolherá a jogada do humano, e se a casa for válida, jogará
     if(jogada==0 && *tabuleiro0==0)
+    {
         if(*turnojogador==1)
             *tabuleiro0=*tabuleiro0+1;
         else
             *tabuleiro0=*tabuleiro0-1;
+    }
 
     if(jogada==1 && *tabuleiro1==0)
+    {
         if(*turnojogador==1)
             *tabuleiro1=*tabuleiro1+1;
         else
             *tabuleiro1=*tabuleiro1-1;
+    }
 
     if(jogada==2 && *tabuleiro2==0)
+    {
         if(*turnojogador==1)
             *tabuleiro2=*tabuleiro2+1;
         else
             *tabuleiro2=*tabuleiro2-1;
+    }
 
     if(jogada==3 && *tabuleiro3==0)
+    {
         if(*turnojogador==1)
             *tabuleiro3=*tabuleiro3+1;
         else
             *tabuleiro3=*tabuleiro3-1;
+    }
 
     if(jogada==4 && *tabuleiro4==0)
+    {
         if(*turnojogador==1)
             *tabuleiro4=*tabuleiro4+1;
         else
             *tabuleiro4=*tabuleiro4-1;
+    }
 
     if(jogada==5 && *tabuleiro5==0)
         if(*turnojogador==1)
