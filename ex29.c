@@ -24,14 +24,14 @@
 #define PRINTGRAF_OFF ;
 
 
-void inicializacao ()
+void inicializacao () //mensagens de inicio
 {
     printf("\nBem-vindo(a) ao programa informatica29PapaiNoel!!");
     printf("\nPrograma criado por: \n Aron Sales de Melo de Medeiros Monteiro, e \n Guido de Lyra Ferrario.");
     printf("\nO programa traz o tradicional Jogo da Velha!\n");
 }
 
-void menu (int *mododejogo,int *dificuldade,int *quemcomeca)
+void menu (int *mododejogo,int *dificuldade,int *quemcomeca) //menu
 {
     printf("\nHa tres modalidades disponiveis: \n");
     printf("Pressione:");
@@ -52,9 +52,9 @@ void menu (int *mododejogo,int *dificuldade,int *quemcomeca)
         printf("\n\nO usuario devera escolher em qual 'casa' ele jogara!");
         printf("\n Exemplo de tabuleiro:\n");
         printf("\n  0 | 1 | 2");
-        printf("\n -----------");
+        printf("\n ---+---+---");
         printf("\n  3 | 4 | 5");
-        printf("\n -----------");
+        printf("\n ---+---+---");
         printf("\n  6 | 7 | 8\n");
         printf("\n Os numeros representam as opcoes de 'casa' para a execucao da jogada!\n\n");
         printf("\n SE O JOGADOR PRESSIONAR UM NUMERO DE UMA CASA JA OCULPADA, PERDERA' A VEZ!!\n");
@@ -63,7 +63,7 @@ void menu (int *mododejogo,int *dificuldade,int *quemcomeca)
     {
         printf("\nQuem fara o primeiro movimento?\n");
         printf("\nPressione\n'1' para humano ou\n");
-        printf("'2' para computador");
+        printf("'2' para computador\n");
         scanf("%d", &*quemcomeca);
     }
 }
@@ -146,7 +146,7 @@ void nivelfacil(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
 
     while(marquei==0)
     {
-        srand(time(NULL));
+        srand(time(NULL)); //computador joga aleatoriamente, validando a jogada apenas se a casa estiver vazia
         jogadafacil=rand()%MAXCASAS;
 
         if(jogadafacil==0 && *tabuleiro0==0)
@@ -243,6 +243,7 @@ void nivelmedio(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
     while(marquei==0)
     {
         //0 e 1
+        //se as casa 0 e 1 estiverem preenchidas pelo adversario ou pelo proprio computador, e a 2 vazia,  ele deve jogar la, evitando a derrota ou conquistando a vitoria
         if(*tabuleiro0==1 && *tabuleiro1==1 && *tabuleiro2==0 && marquei==0 || *tabuleiro0==-1 && *tabuleiro1==-1 && *tabuleiro2==0 && marquei==0)
         {
             if(*turnomaquina==1)
@@ -279,6 +280,7 @@ void nivelmedio(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
             marquei=marquei+1;
         }
         //0 e 4 (diagonal)
+        //se as casa 0 e 4 estiverem preenchidas pelo adversario ou pelo computador, e a casa 8 vazia, o computador devera jogar nesta casa, evitando a derrota ou conquistando a vitoria.
         if(*tabuleiro0==1 && *tabuleiro4==1 && *tabuleiro8==0 && marquei==0 || *tabuleiro0==-1 && *tabuleiro4==-1 && *tabuleiro8==0 && marquei==0)
         {
             if(*turnomaquina==1)
@@ -458,7 +460,7 @@ void nivelmedio(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
                 *tabuleiro2=-1;
             marquei=marquei+1;
         }
-            srand(time(NULL));
+            srand(time(NULL)); //se nao houver risco de derrota ou possibilidade de derrota no turno, o computador ira jogar em uma casa aleatoria que esta disponivel para jogada
             jogadamedia=rand()%MAXCASAS;
 
         if(jogadamedia==0 && *tabuleiro0==0 && marquei==0)
@@ -769,7 +771,7 @@ void niveldificil(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro
             marquei=marquei+1;
         }
 
-        if(*tabuleiro4==0 && marquei==0)
+        if(*tabuleiro4==0 && marquei==0) // computador da preferencia pela jogada na casa 4(do centro)
         {
             if(*turnomaquina==1)
                 *tabuleiro4=1;
@@ -778,7 +780,7 @@ void niveldificil(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro
             marquei=1;
         }
 
-        if(*tabuleiro0==0 && marquei==0)
+        if(*tabuleiro0==0 && marquei==0) // se nao houver risco de derrota ou possibilidade de vitoria, e a casa central estiver ocupada, o computador devera jogar em uma das casas nas 'quinas'(0,2,6 e 8).
         {
             if(*turnomaquina==1)
                 *tabuleiro0=1;
@@ -1057,7 +1059,7 @@ void tabuleiro(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,i
     PRINTGRAF_OFF;
 }
 
-void despedida()
+void despedida() //mensagem de despedida, aparece no fim do programa.
 {
     printf("\n\nObrigado por executar o informatica29PapaiNoel!! Boas festas!\n\n");
 }
