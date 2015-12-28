@@ -41,7 +41,7 @@ void menu (int *mododejogo,int *dificuldade)
     scanf("%d", &*mododejogo);
     if(*mododejogo==2 || *mododejogo==3)
     {
-        printf("\n Voce escolheu jogar contra a maquina, por favor, informe em qual dificuldade voce deseja o desafio:");
+        printf("\n Por favor, informe em qual dificuldade voce deseja o desafio:");
         printf("\n '4' - Nivel facil");
         printf("\n '5' - Nivel medio");
         printf("\n '6' - Nivel dificil\n");
