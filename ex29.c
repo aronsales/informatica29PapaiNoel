@@ -246,7 +246,7 @@ void nivelmedio(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
     {
         //0 e 1
         //se as casa 0 e 1 estiverem preenchidas pelo adversario ou pelo proprio computador, e a 2 vazia,  ele deve jogar la, evitando a derrota ou conquistando a vitoria
-        if(*tabuleiro0==1 && *tabuleiro1==1 && *tabuleiro2==0 && marquei==0 || *tabuleiro0==-1 && *tabuleiro1==-1 && *tabuleiro2==0 && marquei==0)
+        if((*tabuleiro0==1 && *tabuleiro1==1 && *tabuleiro2==0 && marquei==0) || (*tabuleiro0==-1 && *tabuleiro1==-1 && *tabuleiro2==0 && marquei==0))
         {
             if(*turnomaquina==1)
                 *tabuleiro2=1;
@@ -255,7 +255,7 @@ void nivelmedio(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
             marquei=marquei+1;
         }
         //0 e 2
-        if(*tabuleiro0==1 && *tabuleiro2==1 && *tabuleiro1==0 && marquei==0 || *tabuleiro0==-1 && *tabuleiro2==-1 && *tabuleiro1==0 && marquei==0)
+        if((*tabuleiro0==1 && *tabuleiro2==1 && *tabuleiro1==0 && marquei==0) || (*tabuleiro0==-1 && *tabuleiro2==-1 && *tabuleiro1==0 && marquei==0))
         {
             if(*turnomaquina==1)
                 *tabuleiro1=1;
@@ -264,7 +264,7 @@ void nivelmedio(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
             marquei=marquei+1;
         }  
         //0 e 3
-        if(*tabuleiro0==1 && *tabuleiro3==1 && *tabuleiro6==0 && marquei==0 || *tabuleiro0==-1 && *tabuleiro3==-1 && *tabuleiro6==0 && marquei==0)
+        if((*tabuleiro0==1 && *tabuleiro3==1 && *tabuleiro6==0 && marquei==0) || (*tabuleiro0==-1 && *tabuleiro3==-1 && *tabuleiro6==0 && marquei==0))
         {
             if(*turnomaquina==1)
                 *tabuleiro6=1;
@@ -273,7 +273,7 @@ void nivelmedio(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
             marquei=marquei+1;
         }
         //1 e 2
-        if(*tabuleiro1==1 && *tabuleiro2==1 && *tabuleiro0==0 && marquei==0 || *tabuleiro1==-1 && *tabuleiro2==-1 && *tabuleiro0==0 && marquei==0)
+        if((*tabuleiro1==1 && *tabuleiro2==1 && *tabuleiro0==0 && marquei==0) || (*tabuleiro1==-1 && *tabuleiro2==-1 && *tabuleiro0==0 && marquei==0))
         {
             if(*turnomaquina==1)
                 *tabuleiro0=1;
@@ -283,7 +283,7 @@ void nivelmedio(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
         }
         //0 e 4 (diagonal)
         //se as casa 0 e 4 estiverem preenchidas pelo adversario ou pelo computador, e a casa 8 vazia, o computador devera jogar nesta casa, evitando a derrota ou conquistando a vitoria.
-        if(*tabuleiro0==1 && *tabuleiro4==1 && *tabuleiro8==0 && marquei==0 || *tabuleiro0==-1 && *tabuleiro4==-1 && *tabuleiro8==0 && marquei==0)
+        if((*tabuleiro0==1 && *tabuleiro4==1 && *tabuleiro8==0 && marquei==0) || (*tabuleiro0==-1 && *tabuleiro4==-1 && *tabuleiro8==0 && marquei==0))
         {
             if(*turnomaquina==1)
                 *tabuleiro8=1;
@@ -292,7 +292,7 @@ void nivelmedio(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
             marquei=marquei+1;
         }
         //3 e 4
-        if(*tabuleiro3==1 && *tabuleiro4==1 && *tabuleiro5==0 && marquei==0 || *tabuleiro3==-1 && *tabuleiro4==-1 && *tabuleiro5==0 && marquei==0)
+        if((*tabuleiro3==1 && *tabuleiro4==1 && *tabuleiro5==0 && marquei==0) || (*tabuleiro3==-1 && *tabuleiro4==-1 && *tabuleiro5==0 && marquei==0))
         {
             if(*turnomaquina==1)
                 *tabuleiro5=1;
@@ -301,7 +301,7 @@ void nivelmedio(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
             marquei=marquei+1;
         }
         //3 e 5
-        if(*tabuleiro3==1 && *tabuleiro5==1 && *tabuleiro4==0 && marquei==0 || *tabuleiro3==-1 && *tabuleiro5==-1 && *tabuleiro4==0 && marquei==0)
+        if((*tabuleiro3==1 && *tabuleiro5==1 && *tabuleiro4==0 && marquei==0) || (*tabuleiro3==-1 && *tabuleiro5==-1 && *tabuleiro4==0 && marquei==0))
         {
             if(*turnomaquina==1)
                 *tabuleiro4=1;
@@ -310,7 +310,7 @@ void nivelmedio(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
             marquei=marquei+1;
         }
         //4 e 5
-        if(*tabuleiro4==1 && *tabuleiro5==1 && *tabuleiro3==0 && marquei==0 || *tabuleiro4==-1 && *tabuleiro5==-1 && *tabuleiro3==0 && marquei==0)
+        if((*tabuleiro4==1 && *tabuleiro5==1 && *tabuleiro3==0 && marquei==0) || (*tabuleiro4==-1 && *tabuleiro5==-1 && *tabuleiro3==0 && marquei==0))
         {
             if(*turnomaquina==1)
                 *tabuleiro3=1;
@@ -319,7 +319,7 @@ void nivelmedio(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
             marquei=marquei+1;
         }
         //6 e 7
-        if(*tabuleiro6==1 && *tabuleiro7==1 && *tabuleiro8==0 && marquei==0 || *tabuleiro6==-1 && *tabuleiro7==-1 && *tabuleiro8==0 && marquei==0)
+        if((*tabuleiro6==1 && *tabuleiro7==1 && *tabuleiro8==0 && marquei==0) || (*tabuleiro6==-1 && *tabuleiro7==-1 && *tabuleiro8==0 && marquei==0))
         {
             if(*turnomaquina==1)
                 *tabuleiro8=1;
@@ -328,7 +328,7 @@ void nivelmedio(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
             marquei=marquei+1;
         }
         //6 e 8
-        if(*tabuleiro6==1 && *tabuleiro8==1 && *tabuleiro7==0 && marquei==0 || *tabuleiro6==-1 && *tabuleiro8==-1 && *tabuleiro7==0 && marquei==0)
+        if((*tabuleiro6==1 && *tabuleiro8==1 && *tabuleiro7==0 && marquei==0) || (*tabuleiro6==-1 && *tabuleiro8==-1 && *tabuleiro7==0 && marquei==0))
         {
             if(*turnomaquina==1)
                 *tabuleiro7=1;
@@ -337,7 +337,7 @@ void nivelmedio(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
             marquei=marquei+1;
         }
         //7 e 8
-        if(*tabuleiro7==1 && *tabuleiro8==1 && *tabuleiro6==0 && marquei==0 || *tabuleiro7==-1 && *tabuleiro8==-1 && *tabuleiro6==0 && marquei==0)
+        if((*tabuleiro7==1 && *tabuleiro8==1 && *tabuleiro6==0 && marquei==0) || (*tabuleiro7==-1 && *tabuleiro8==-1 && *tabuleiro6==0 && marquei==0))
         {
             if(*turnomaquina==1)
                 *tabuleiro6=1;
@@ -346,7 +346,7 @@ void nivelmedio(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
             marquei=marquei+1;
         }
         //0 e 6
-        if(*tabuleiro0==1 && *tabuleiro6==1 && *tabuleiro3==0 && marquei==0 || *tabuleiro0==-1 && *tabuleiro6==-1 && *tabuleiro3==0 && marquei==0)
+        if((*tabuleiro0==1 && *tabuleiro6==1 && *tabuleiro3==0 && marquei==0) || (*tabuleiro0==-1 && *tabuleiro6==-1 && *tabuleiro3==0 && marquei==0))
         {
             if(*turnomaquina==1)
                 *tabuleiro3=1;
@@ -355,7 +355,7 @@ void nivelmedio(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
             marquei=marquei+1;
         }
         //3 e 6
-        if(*tabuleiro3==1 && *tabuleiro6==1 && *tabuleiro0==0 && marquei==0 || *tabuleiro3==-1 && *tabuleiro6==-1 && *tabuleiro0==0 && marquei==0)
+        if((*tabuleiro3==1 && *tabuleiro6==1 && *tabuleiro0==0 && marquei==0) || (*tabuleiro3==-1 && *tabuleiro6==-1 && *tabuleiro0==0 && marquei==0))
         {
             if(*turnomaquina==1)
                 *tabuleiro0=1;
@@ -364,7 +364,7 @@ void nivelmedio(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
             marquei=marquei+1;
         }
         //1 e 4
-        if(*tabuleiro1==1 && *tabuleiro4==1 && *tabuleiro7==0 && marquei==0 || *tabuleiro1==-1 && *tabuleiro4==-1 && *tabuleiro7==0 && marquei==0)
+        if((*tabuleiro1==1 && *tabuleiro4==1 && *tabuleiro7==0 && marquei==0) || (*tabuleiro1==-1 && *tabuleiro4==-1 && *tabuleiro7==0 && marquei==0))
         {
             if(*turnomaquina==1)
                 *tabuleiro7=1;
@@ -373,7 +373,7 @@ void nivelmedio(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
             marquei=marquei+1;
         }
         //1 e 7
-        if(*tabuleiro1==1 && *tabuleiro7==1 && *tabuleiro4==0 && marquei==0 || *tabuleiro1==-1 && *tabuleiro7==-1 && *tabuleiro4==0 && marquei==0)
+        if((*tabuleiro1==1 && *tabuleiro7==1 && *tabuleiro4==0 && marquei==0) || (*tabuleiro1==-1 && *tabuleiro7==-1 && *tabuleiro4==0 && marquei==0))
         {
             if(*turnomaquina==1)
                 *tabuleiro4=1;
@@ -382,7 +382,7 @@ void nivelmedio(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
             marquei=marquei+1;
         }
         //4 e 7
-        if(*tabuleiro4==1 && *tabuleiro7==1 && *tabuleiro1==0 && marquei==0 || *tabuleiro4==-1 && *tabuleiro7==-1 && *tabuleiro1==0 && marquei==0)
+        if((*tabuleiro4==1 && *tabuleiro7==1 && *tabuleiro1==0 && marquei==0) || (*tabuleiro4==-1 && *tabuleiro7==-1 && *tabuleiro1==0 && marquei==0))
         {
             if(*turnomaquina==1)
                 *tabuleiro1=1;
@@ -391,7 +391,7 @@ void nivelmedio(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
             marquei=marquei+1;
         }
         //2 e 5
-        if(*tabuleiro2==1 && *tabuleiro5==1 && *tabuleiro8==0 && marquei==0 || *tabuleiro2==-1 && *tabuleiro5==-1 && *tabuleiro8==0 && marquei==0)
+        if((*tabuleiro2==1 && *tabuleiro5==1 && *tabuleiro8==0 && marquei==0) || (*tabuleiro2==-1 && *tabuleiro5==-1 && *tabuleiro8==0 && marquei==0))
         {
             if(*turnomaquina==1)
                 *tabuleiro8=1;
@@ -400,7 +400,7 @@ void nivelmedio(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
             marquei=marquei+1;
         }
         //2 e 8
-        if(*tabuleiro2==1 && *tabuleiro8==1 && *tabuleiro5==0 && marquei==0 || *tabuleiro2==-1 && *tabuleiro8==-1 && *tabuleiro5==0 && marquei==0)
+        if((*tabuleiro2==1 && *tabuleiro8==1 && *tabuleiro5==0 && marquei==0) || (*tabuleiro2==-1 && *tabuleiro8==-1 && *tabuleiro5==0 && marquei==0))
         {
             if(*turnomaquina==1)
                 *tabuleiro5=1;
@@ -409,7 +409,7 @@ void nivelmedio(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
             marquei=marquei+1;
         }
         //5 e 8
-        if(*tabuleiro5==1 && *tabuleiro8==1 && *tabuleiro2==0 && marquei==0 || *tabuleiro5==-1 && *tabuleiro8==-1 && *tabuleiro2==0 && marquei==0)
+        if((*tabuleiro5==1 && *tabuleiro8==1 && *tabuleiro2==0 && marquei==0) || (*tabuleiro5==-1 && *tabuleiro8==-1 && *tabuleiro2==0 && marquei==0))
         {
             if(*turnomaquina==1)
                 *tabuleiro2=1;
@@ -418,7 +418,7 @@ void nivelmedio(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
             marquei=marquei+1;
         }
         //0 e 8(diagonal)
-        if(*tabuleiro0==1 && *tabuleiro8==1 && *tabuleiro4==0 && marquei==0 || *tabuleiro0==-1 && *tabuleiro8==-1 && *tabuleiro4==0 && marquei==0)
+        if((*tabuleiro0==1 && *tabuleiro8==1 && *tabuleiro4==0 && marquei==0) || (*tabuleiro0==-1 && *tabuleiro8==-1 && *tabuleiro4==0 && marquei==0))
         {
             if(*turnomaquina==1)
                 *tabuleiro4=1;
@@ -427,7 +427,7 @@ void nivelmedio(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
             marquei=marquei+1;
         }
         //4 e 8(diagonal)
-        if(*tabuleiro4==1 && *tabuleiro8==1 && *tabuleiro0==0 && marquei==0 || *tabuleiro4==-1 && *tabuleiro8==-1 && *tabuleiro0==0 && marquei==0)
+        if((*tabuleiro4==1 && *tabuleiro8==1 && *tabuleiro0==0 && marquei==0) || (*tabuleiro4==-1 && *tabuleiro8==-1 && *tabuleiro0==0 && marquei==0))
         {
             if(*turnomaquina==1)
                 *tabuleiro0=1;
@@ -436,7 +436,7 @@ void nivelmedio(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
             marquei=marquei+1;
         }
         //2 e 4(diagonal)
-        if(*tabuleiro2==1 && *tabuleiro4==1 && *tabuleiro6==0 && marquei==0 || *tabuleiro2==-1 && *tabuleiro4==-1 && *tabuleiro6==0 && marquei==0)
+        if((*tabuleiro2==1 && *tabuleiro4==1 && *tabuleiro6==0 && marquei==0) || (*tabuleiro2==-1 && *tabuleiro4==-1 && *tabuleiro6==0 && marquei==0))
         {
             if(*turnomaquina==1)
                 *tabuleiro6=1;
@@ -445,7 +445,7 @@ void nivelmedio(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
             marquei=marquei+1;
         }
         //2 e 6(diagonal)
-        if(*tabuleiro2==1 && *tabuleiro6==1 && *tabuleiro4==0 && marquei==0 || *tabuleiro2==-1 && *tabuleiro6==-1 && *tabuleiro4==0 && marquei==0)
+        if((*tabuleiro2==1 && *tabuleiro6==1 && *tabuleiro4==0 && marquei==0) || (*tabuleiro2==-1 && *tabuleiro6==-1 && *tabuleiro4==0 && marquei==0))
         {
             if(*turnomaquina==1)
                 *tabuleiro4=1;
@@ -454,7 +454,7 @@ void nivelmedio(int *tabuleiro0,int *tabuleiro1,int *tabuleiro2,int *tabuleiro3,
             marquei=marquei+1;
         }
         //4 e 6(diagonal)
-        if(*tabuleiro4==1 && *tabuleiro6==1 && *tabuleiro2==0 && marquei==0 || *tabuleiro4==-1 && *tabuleiro6==-1 && *tabuleiro2==0 && marquei==0)
+        if((*tabuleiro4==1 && *tabuleiro6==1 && *tabuleiro2==0 && marquei==0) || (*tabuleiro4==-1 && *tabuleiro6==-1 && *tabuleiro2==0 && marquei==0))
         {
             if(*turnomaquina==1)
                 *tabuleiro2=1;
